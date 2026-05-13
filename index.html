@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSCE Nurse Training Cambridge | 100+ ★★★★★ Reviews | 95%+ Pass Rate</title>
+  <meta name="description" content="Personalised OSCE training for international nurses in Cambridge. 100+ five-star Google reviews. 95%+ pass rate. Book your course today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy:        #1A2E4A;
+      --navy-light:  #243D62;
+      --navy-dark:   #101D30;
+      --gold:        #C8922A;
+      --gold-light:  #DFA83C;
+      --gold-pale:   #FBF0DC;
+      --teal:        #2D8A7B;
+      --teal-light:  #3AADA0;
+      --bg:          #FAFAF7;
+      --bg-warm:     #F4EFE6;
+      --text:        #1A1A2E;
+      --muted:       #6B7480;
+      --white:       #FFFFFF;
+      --sh-card:     0 2px 8px rgba(26,46,74,.06), 0 8px 24px rgba(26,46,74,.10);
+      --sh-raised:   0 4px 16px rgba(26,46,74,.08), 0 16px 48px rgba(26,46,74,.14);
+      --sh-float:    0 8px 32px rgba(26,46,74,.12), 0 32px 80px rgba(26,46,74,.18);
+      --sh-gold:     0 4px 20px rgba(200,146,42,.28), 0 8px 40px rgba(200,146,42,.14);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    /* Typography */
+    h1,h2,h3,.serif { font-family: 'Fraunces', serif; }
+
+    /* ── Scroll reveal ── */
+    .rev {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1);
+    }
+    .rev.vis { opacity: 1; transform: none; }
+    .d1 { transition-delay: .10s; }
+    .d2 { transition-delay: .20s; }
+    .d3 { transition-delay: .30s; }
+    .d4 { transition-delay: .40s; }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 200;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+      transition: background .35s ease, box-shadow .35s ease;
+    }
+    #nav.scrolled {
+      background: rgba(16,29,48,.96);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 2px 28px rgba(16,29,48,.35);
+    }
+    .nav-logo {
+      text-decoration: none;
+      display: flex; align-items: center;
+    }
+    .nav-logo img {
+      height: 48px; width: auto; object-fit: contain; display: block;
+      filter: invert(1) brightness(1.1);
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+    .nav-links a {
+      color: #fff; font-size: .875rem; text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+    .nav-book {
+      background: var(--gold); color: #fff !important;
+      padding: .5rem 1.2rem !important; border-radius: 7px;
+      font-weight: 500 !important;
+      transition: background .2s ease, transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s ease !important;
+      box-shadow: var(--sh-gold);
+    }
+    .nav-book:hover { background: var(--gold-light) !important; transform: translateY(-2px) !important; box-shadow: 0 8px 32px rgba(200,146,42,.4) !important; }
+    .nav-book:active { transform: none !important; }
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; margin: 4px 0; transition: transform .3s ease, opacity .3s ease; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-burger { display: block; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center;
+      background: var(--navy-dark); overflow: hidden;
+    }
+    #hero-paths {
+      position: absolute; inset: 0;
+      pointer-events: none; overflow: hidden;
+      color: rgba(255,255,255,0.18); z-index: 1;
+    }
+    #hero-paths svg { width: 100%; height: 100%; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hero-glow {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 10% 60%, rgba(45,138,123,.28) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 60% at 90% 15%, rgba(200,146,42,.18) 0%, transparent 55%),
+        linear-gradient(150deg, rgba(16,29,48,.97) 0%, rgba(26,46,74,.88) 55%, rgba(16,29,48,.95) 100%);
+    }
+    .hero-accent {
+      position: absolute; bottom: -120px; right: -80px;
+      width: 520px; height: 520px; border-radius: 50%;
+      border: 1.5px solid rgba(200,146,42,.12);
+      box-shadow: 0 0 0 60px rgba(200,146,42,.04), 0 0 0 120px rgba(200,146,42,.02);
+      pointer-events: none;
+    }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.75rem; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .72rem; font-weight: 500; letter-spacing: .05em;
+      color: rgba(255,255,255,.75);
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.05);
+      padding: .32rem .85rem; border-radius: 100px;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1100px; width: 100%;
+      margin: 0 auto; padding: 140px 2.5rem 100px;
+      display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(200,146,42,.12);
+      border: 1px solid rgba(200,146,42,.28);
+      color: var(--gold-light);
+      font-size: .72rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .38rem 1rem; border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow .pulse {
+      width: 6px; height: 6px; background: var(--gold);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+    .hero-h1 {
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      font-weight: 600; line-height: 1.03;
+      letter-spacing: -.04em; color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      font-size: clamp(.95rem, 1.4vw, 1.1rem);
+      color: rgba(255,255,255,.65); line-height: 1.75;
+      max-width: 520px; font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    /* Primary button */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--gold); color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem; font-weight: 500;
+      padding: .85rem 1.7rem; border-radius: 8px;
+      text-decoration: none;
+      box-shadow: var(--sh-gold);
+      transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, background .2s ease;
+    }
+    .btn-gold:hover { transform: translateY(-2px); background: var(--gold-light); box-shadow: 0 10px 36px rgba(200,146,42,.45); }
+    .btn-gold:active { transform: none; }
+    .btn-gold:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    /* Ghost button */
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .5rem;
+      color: rgba(255,255,255,.7); font-size: .9rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.22);
+      padding-bottom: 2px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.6); }
+    .btn-ghost:focus-visible { outline: 2px solid rgba(255,255,255,.45); outline-offset: 3px; border-radius: 2px; }
+
+    /* Hero right-side stat card */
+    .hero-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 16px 64px rgba(0,0,0,.3);
+    }
+    .hero-card-big {
+      font-family: 'Fraunces', serif;
+      font-size: 4.5rem; font-weight: 700;
+      line-height: 1; letter-spacing: -.06em;
+      color: var(--gold-light);
+    }
+    .hero-card-label {
+      font-size: .8rem; color: rgba(255,255,255,.45);
+      margin-top: .25rem; margin-bottom: 1.5rem;
+      letter-spacing: .04em;
+    }
+    .hero-card-stars { color: #FBBC04; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: .25rem; }
+    .hero-card-review-count { font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 1.5rem; }
+    .hero-card-divider { height: 1px; background: rgba(255,255,255,.09); margin-bottom: 1.5rem; }
+    .hero-stat-row { display: flex; justify-content: space-between; margin-bottom: 1.1rem; }
+    .hero-stat-row:last-child { margin-bottom: 0; }
+    .hero-stat-val { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: #fff; letter-spacing: -.03em; line-height: 1; }
+    .hero-stat-lbl { font-size: .72rem; color: rgba(255,255,255,.42); margin-top: .22rem; }
+    .hero-scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: rgba(255,255,255,.3); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      animation: bob 2s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-card { display: none; }
+    }
+
+    /* ── PROOF BAR ── */
+    .proof-bar { background: var(--navy); padding: 1.35rem 2rem; }
+    .proof-bar-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .65rem 2.25rem;
+      border-right: 1px solid rgba(255,255,255,.09);
+    }
+    .proof-item:last-child { border-right: none; }
+    .proof-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(200,146,42,.14);
+      border: 1px solid rgba(200,146,42,.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proof-icon svg { width: 15px; height: 15px; }
+    .proof-val { font-size: .9rem; font-weight: 500; color: rgba(255,255,255,.93); line-height: 1.2; }
+    .proof-lbl { font-size: .73rem; color: rgba(255,255,255,.40); margin-top: .1rem; }
+
+    /* ── HOW IT WORKS ── */
+    .hiw { background: var(--bg-warm); padding: 6rem 2.5rem; }
+    .hiw-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { display: inline-block; font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .9rem; }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      font-weight: 600; line-height: 1.1;
+      letter-spacing: -.03em; color: var(--navy);
+      margin-bottom: .9rem;
+    }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 500px; line-height: 1.7; }
+    .hiw-steps {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem; margin-top: 3.5rem;
+      position: relative;
+    }
+    .hiw-steps::before {
+      content: '';
+      position: absolute; top: 2.5rem;
+      left: calc(16.67% + 1.5rem); right: calc(16.67% + 1.5rem);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(200,146,42,.5) 0%, rgba(45,138,123,.5) 100%);
+      opacity: .4;
+    }
+    .hiw-card { text-align: center; padding: 2.5rem 1.75rem; }
+    .hiw-num {
+      width: 50px; height: 50px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600;
+      color: #fff; margin: 0 auto 1.4rem;
+      box-shadow: 0 4px 18px rgba(26,46,74,.22);
+      position: relative; z-index: 1;
+    }
+    .hiw-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); letter-spacing: -.02em; margin-bottom: .65rem; }
+    .hiw-card p { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+    @media (max-width: 640px) {
+      .hiw-steps { grid-template-columns: 1fr; }
+      .hiw-steps::before { display: none; }
+    }
+
+    /* ── COURSES ── */
+    .courses-sec { padding: 6rem 2.5rem; background: var(--bg); }
+    .courses-inner { max-width: 1100px; margin: 0 auto; }
+    .courses-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .course-card {
+      background: var(--white); border-radius: 16px;
+      padding: 2rem 1.75rem;
+      border: 1px solid rgba(26,46,74,.07);
+      box-shadow: var(--sh-card);
+      transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .course-card:hover { transform: translateY(-6px); box-shadow: var(--sh-raised); }
+    .course-card.feat { background: var(--navy); border-color: transparent; }
+    .feat-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: var(--gold); color: #fff;
+      font-size: .65rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: .28rem .9rem;
+      border-radius: 100px;
+    }
+    .course-icon { font-size: 1.6rem; margin-bottom: 1.1rem; }
+    .course-name { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; margin-bottom: .5rem; }
+    .course-card:not(.feat) .course-name { color: var(--navy); }
+    .feat .course-name { color: #fff; }
+    .course-desc { font-size: .85rem; line-height: 1.65; margin-bottom: 1.4rem; }
+    .course-card:not(.feat) .course-desc { color: var(--muted); }
+    .feat .course-desc { color: rgba(255,255,255,.58); }
+    .course-feats { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: .55rem; }
+    .course-feats li { display: flex; align-items: center; gap: .6rem; font-size: .82rem; }
+    .course-card:not(.feat) .course-feats li { color: var(--text); }
+    .feat .course-feats li { color: rgba(255,255,255,.78); }
+    .chk { width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; }
+    .chk-teal { background: rgba(45,138,123,.12); color: var(--teal); }
+    .chk-gold { background: rgba(200,146,42,.12); color: var(--gold); }
+    .chk-white { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
+    .course-price { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; letter-spacing: -.03em; margin-bottom: 1.25rem; }
+    .course-card:not(.feat) .course-price { color: var(--navy); }
+    .feat .course-price { color: var(--gold-light); }
+    .course-price small { font-family: 'DM Sans', sans-serif; font-size: .8rem; font-weight: 400; opacity: .55; }
+    .btn-book {
+      display: block; text-align: center;
+      padding: .78rem 1.5rem; border-radius: 8px;
+      font-size: .875rem; font-weight: 500;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-book:hover { transform: translateY(-2px); }
+    .btn-book:active { transform: none; }
+    .btn-book:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .btn-dark { background: var(--navy); color: #fff; box-shadow: var(--sh-card); }
+    .btn-dark:hover { box-shadow: var(--sh-raised); background: var(--navy-light); }
+    .btn-gold-fill { background: var(--gold); color: #fff; box-shadow: var(--sh-gold); }
+    .btn-gold-fill:hover { background: var(--gold-light); box-shadow: 0 8px 32px rgba(200,146,42,.42); }
+    .btn-outline-w { border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.85); }
+    .btn-outline-w:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.45); }
+    @media (max-width: 860px) { .courses-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; } }
+
+    /* ── VIDEOS ── */
+    .videos-sec { background: var(--navy-dark); padding: 6rem 2.5rem; }
+    .videos-inner { max-width: 1100px; margin: 0 auto; }
+    .videos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .vid-card {
+      border-radius: 16px; overflow: hidden;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+    }
+    .vid-card:hover { transform: translateY(-5px); box-shadow: 0 20px 56px rgba(0,0,0,.4); }
+    .vid-thumb { position: relative; padding-top: 56.25%; background: rgba(26,46,74,.5); }
+    .vid-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .65; }
+    .vid-play-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .vid-play {
+      width: 54px; height: 54px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(200,146,42,.55);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .vid-card:hover .vid-play { transform: scale(1.12); box-shadow: 0 8px 40px rgba(200,146,42,.65); }
+    .vid-info { padding: 1.2rem 1.25rem 1.5rem; }
+    .vid-student { display: flex; align-items: center; gap: .7rem; margin-bottom: .7rem; }
+    .vid-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: .85rem; color: #fff; flex-shrink: 0; }
+    .vid-name { font-size: .875rem; font-weight: 500; color: #fff; }
+    .vid-country { font-size: .72rem; color: rgba(255,255,255,.38); }
+    .vid-quote { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; font-style: italic; }
+    @media (max-width: 768px) { .videos-grid { grid-template-columns: 1fr; } }
+
+    /* ── REVIEWS ── */
+    .reviews-sec { background: var(--bg-warm); padding: 6rem 2.5rem; }
+    .reviews-inner { max-width: 1100px; margin: 0 auto; }
+    .reviews-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .google-badge {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--white); border-radius: 14px;
+      padding: 1rem 1.5rem; box-shadow: var(--sh-card);
+    }
+    .g-score { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--navy); letter-spacing: -.05em; line-height: 1; }
+    .g-stars { color: #FBBC04; font-size: 1rem; letter-spacing: 2px; }
+    .g-count { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+    .g-logo { width: 22px; height: 22px; margin-left: .4rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .rev-card {
+      background: var(--white); border-radius: 14px;
+      padding: 1.5rem; border: 1px solid rgba(26,46,74,.05);
+      box-shadow: var(--sh-card);
+      transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+    }
+    .rev-card:hover { transform: translateY(-4px); box-shadow: var(--sh-raised); }
+    .rev-stars { color: #FBBC04; font-size: .82rem; letter-spacing: 2px; margin-bottom: .7rem; }
+    .rev-text { font-size: .85rem; line-height: 1.72; color: var(--text); font-style: italic; margin-bottom: 1.2rem; }
+    .rev-author { display: flex; align-items: center; gap: .7rem; }
+    .rev-av { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: .78rem; color: #fff; flex-shrink: 0; }
+    .rev-name { font-size: .85rem; font-weight: 500; color: var(--navy); }
+    .rev-loc { font-size: .72rem; color: var(--muted); }
+    .rev-invite {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; background: var(--gold-pale);
+      border: 1px solid rgba(200,146,42,.18); border-radius: 14px;
+      padding: 2rem 1.5rem;
+    }
+    .rev-invite .big-star { font-size: 2.2rem; margin-bottom: .65rem; }
+    .rev-invite p { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--navy); font-weight: 600; margin-bottom: .4rem; }
+    .rev-invite small { font-size: .8rem; color: var(--muted); display: block; margin-bottom: 1.1rem; }
+    .btn-outline-navy {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 1.5px solid var(--navy); color: var(--navy);
+      padding: .6rem 1.2rem; border-radius: 7px;
+      font-size: .82rem; font-weight: 500; text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .btn-outline-navy:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+    .btn-outline-navy:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+    @media (max-width: 860px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+    /* ── ABOUT ── */
+    .about-sec { background: var(--white); padding: 6rem 2.5rem; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 20px; box-shadow: var(--sh-raised); display: block; }
+    .about-float {
+      position: absolute; bottom: 2rem; right: -2rem;
+      background: var(--navy); border-radius: 16px;
+      padding: 1.35rem 1.75rem; box-shadow: var(--sh-float);
+      min-width: 175px;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .float-big { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--gold-light); letter-spacing: -.05em; line-height: 1; }
+    .float-lbl { font-size: .72rem; color: rgba(255,255,255,.5); margin-top: .25rem; font-weight: 400; }
+    .about-quote-mark { font-family: 'Fraunces', serif; font-size: 4.5rem; line-height: .45; color: var(--gold); opacity: .28; display: block; margin-bottom: .6rem; }
+    .about-quote { font-family: 'Fraunces', serif; font-size: 1.3rem; font-style: italic; color: var(--navy); line-height: 1.5; margin-bottom: 1.4rem; letter-spacing: -.01em; }
+    .about-bio { font-size: .92rem; color: var(--muted); line-height: 1.78; margin-bottom: 0.75rem; }
+    .credential-tags { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .tag { background: rgba(45,138,123,.08); color: var(--teal); border: 1px solid rgba(45,138,123,.2); font-size: .78rem; font-weight: 500; padding: .32rem .8rem; border-radius: 100px; }
+    @media (max-width: 860px) { .about-inner { grid-template-columns: 1fr; gap: 2.5rem; } .about-float { display: none; } }
+
+    /* ── FAQ ── */
+    .faq-sec { background: var(--bg); padding: 6rem 2.5rem; }
+    .faq-inner { max-width: 1100px; margin: 0 auto; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3.5rem; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid rgba(26,46,74,.09); }
+    .faq-btn {
+      width: 100%; background: none; border: none; text-align: left;
+      padding: 1.2rem 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 500;
+      color: var(--navy);
+      transition: color .2s ease;
+    }
+    .faq-btn:hover { color: var(--teal); }
+    .faq-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+    .faq-ico {
+      width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+      border: 1.5px solid rgba(26,46,74,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; line-height: 1; color: var(--muted);
+      transition: transform .3s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .faq-item.open .faq-ico { transform: rotate(45deg); background: var(--teal); border-color: var(--teal); color: #fff; }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.22,1,.36,1); }
+    .faq-item.open .faq-body { max-height: 280px; }
+    .faq-body-inner { padding-bottom: 1.25rem; font-size: .875rem; color: var(--muted); line-height: 1.78; }
+    /* FAQ sidebar */
+    .faq-aside {
+      background: var(--navy); border-radius: 20px;
+      padding: 2.5rem; box-shadow: var(--sh-raised);
+    }
+    .faq-aside h3 { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 600; color: #fff; letter-spacing: -.03em; margin-bottom: .7rem; line-height: 1.2; }
+    .faq-aside-sub { font-size: .85rem; color: rgba(255,255,255,.48); line-height: 1.68; margin-bottom: 2rem; }
+    .contact-rows { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .contact-row { display: flex; align-items: center; gap: .75rem; }
+    .contact-icon { width: 36px; height: 36px; flex-shrink: 0; background: rgba(200,146,42,.14); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .contact-lbl { font-size: .7rem; color: rgba(255,255,255,.35); margin-bottom: .08rem; }
+    .contact-val { font-size: .875rem; color: #fff; text-decoration: none; transition: color .2s ease; }
+    a.contact-val:hover { color: var(--gold-light); }
+    .btn-white {
+      display: block; text-align: center;
+      background: #fff; color: var(--navy);
+      padding: .85rem 1.5rem; border-radius: 8px;
+      font-size: .9rem; font-weight: 500; text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,255,255,.18); }
+    .btn-white:focus-visible { outline: 2px solid rgba(255,255,255,.5); outline-offset: 3px; }
+    @media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    /* ── RESOURCES ── */
+    .resources-sec { background: var(--navy-dark); padding: 6rem 2.5rem; }
+    .resources-inner { max-width: 1100px; margin: 0 auto; }
+    .yt-sub-head { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-light); margin: 3rem 0 1.25rem; }
+    .yt-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .yt-grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; max-width: 730px; }
+    .yt-card {
+      border-radius: 16px; overflow: hidden;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+    }
+    .yt-card:hover { transform: translateY(-5px); box-shadow: 0 20px 56px rgba(0,0,0,.4); }
+    .yt-thumb { position: relative; padding-top: 56.25%; background: #000; border-radius: 16px; overflow: hidden; }
+    .yt-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .yt-facade { cursor: pointer; }
+    .yt-facade img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .yt-play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 64px; height: 64px; border-radius: 50%; border: none;
+      background: rgba(0,0,0,.65); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, transform .2s;
+    }
+    .yt-facade:hover .yt-play-btn { background: #ff0000; transform: translate(-50%,-50%) scale(1.1); }
+    .yt-channel-cta { text-align: center; margin-top: 3.5rem; }
+    @media (max-width: 768px) { .yt-grid, .yt-grid-2 { grid-template-columns: 1fr; max-width: 100%; } }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy-dark); padding: 4rem 2.5rem 2rem; border-top: 1px solid rgba(255,255,255,.05); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .f-logo { text-decoration: none; display: inline-block; margin-bottom: .9rem; }
+    .f-logo img {
+      height: 44px; width: auto; object-fit: contain; display: block;
+      filter: invert(1) brightness(1.1);
+    }
+    .f-tagline { font-size: .82rem; color: #fff; line-height: 1.65; max-width: 250px; margin-bottom: 1.4rem; }
+    .f-socials { display: flex; gap: .65rem; }
+    .f-social {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; color: rgba(255,255,255,.45);
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .f-social:hover { background: rgba(255,255,255,.12); color: #fff; transform: translateY(-2px); }
+    .f-social:focus-visible { outline: 2px solid rgba(255,255,255,.4); outline-offset: 3px; }
+    .f-col-title { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    .f-links { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    .f-links a { font-size: .82rem; color: #fff; text-decoration: none; transition: color .2s ease; }
+    .f-links a:hover { color: var(--gold-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 1.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .f-copy { font-size: .78rem; color: #fff; }
+    .f-legal { display: flex; gap: 1.4rem; }
+    .f-legal a { font-size: .78rem; color: #fff; text-decoration: none; transition: color .2s ease; }
+    .f-legal a:hover { color: rgba(255,255,255,.7); }
+    @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+
+    /* ── MOBILE STICKY BAR ── */
+    .mob-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--navy); border-top: 1px solid rgba(255,255,255,.08);
+      padding: .9rem 1.5rem; gap: .75rem; z-index: 100;
+    }
+    .mob-bar a.btn-gold { flex: 1; justify-content: center; font-size: .85rem; padding: .75rem 1rem; }
+    .mob-call {
+      width: 46px; height: 46px; flex-shrink: 0;
+      background: rgba(200,146,42,.12); border: 1px solid rgba(200,146,42,.28);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; color: var(--gold);
+      transition: background .2s ease;
+    }
+    .mob-call:hover { background: rgba(200,146,42,.22); }
+    @media (max-width: 768px) { .mob-bar { display: flex; } body { padding-bottom: 72px; } }
+
+    /* ── MISC RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .proof-bar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+      .proof-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); justify-content: flex-start; padding: .75rem 1.5rem; }
+      .proof-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+      .proof-item:last-child { grid-column: 1 / -1; justify-content: center; border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="OSCE Nurse Training Cambridge">
+    <img src="osce-logo.png" alt="ONTC Cambridge">
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#success-stories">Success Stories</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="tel:+447771808735" class="nav-book">Call Us Now</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div id="hero-paths" aria-hidden="true"></div>
+  <div class="hero-accent" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow rev">
+        <span class="pulse" aria-hidden="true"></span>
+        NMC OSCE Training &nbsp;·&nbsp; Cambridge, UK &nbsp;·&nbsp; Trusted Worldwide
+      </div>
+      <h1 class="hero-h1 rev d1" id="hero-h1">
+        Empowering overseas nurses to reach their <em>full potential</em>
+      </h1>
+      <p class="hero-sub rev d2" style="color:#fff">
+        Personalised <strong style="color:var(--gold-light);font-weight:500">OSCE</strong> training in Cambridge for international nurses — from a team with a <strong style="color:#fff;font-weight:500">95%+ pass rate</strong> that has helped hundreds pass their exams and begin their UK nursing careers.
+      </p>
+      <div class="hero-chips rev d3">
+        <span class="hero-chip">1-to-1 Personalised</span>
+        <span class="hero-chip">NMC-Aligned</span>
+        <span class="hero-chip">Cambridge-Based</span>
+        <span class="hero-chip">Flexible Dates</span>
+      </div>
+      <div class="hero-actions rev d4">
+        <a href="#success-stories" class="btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M6 5l4.5 2.5L6 10V5z" fill="currentColor"/></svg>
+          Watch Student Stories
+        </a>
+        <a href="#about" class="btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><circle cx="7.5" cy="5" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 13.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          Meet Your Trainer
+        </a>
+        <a href="#resources" class="btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2 2h8l3 3v8H2V2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 2v4h4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5 8h5M5 10.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          Resources
+        </a>
+      </div>
+    </div>
+    <!-- Stats card -->
+    <div class="hero-card rev d2" aria-label="Trust statistics">
+      <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:.75rem;">OSCE Nurse Training Cambridge</div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+        <div>
+          <div class="hero-card-big" aria-label="100+ reviews">100+</div>
+          <div class="hero-card-label">Verified Google Reviews</div>
+          <div class="hero-card-stars" aria-label="Five stars">★★★★★</div>
+          <div class="hero-card-review-count">5 Star Rating</div>
+        </div>
+        <img src="ontc-logo.jpg" alt="ONTC Cambridge" style="height:145px;width:145px;object-fit:cover;border-radius:50%;opacity:.95;flex-shrink:0;margin-right:12px;margin-top:18px;">
+      </div>
+      <div class="hero-card-divider" aria-hidden="true"></div>
+      <div class="hero-stat-row">
+        <div>
+          <div style="height:2.8rem;display:flex;align-items:center">
+            <span class="hero-stat-val">95%+</span>
+          </div>
+          <div class="hero-stat-lbl">Pass Rate</div>
+        </div>
+        <div style="text-align:center">
+          <div style="height:2.8rem;display:flex;align-items:center;justify-content:center">
+            <span class="hero-stat-val">30+</span>
+          </div>
+          <div class="hero-stat-lbl">Countries Represented</div>
+        </div>
+        <div style="text-align:center">
+          <div style="height:2.8rem;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true" style="color:#fff;width:2.4rem;height:2.4rem">
+              <circle cx="9" cy="9" r="7.2" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="9" cy="9" r="1.4" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="hero-stat-lbl">Tailored Courses</div>
+        </div>
+      </div>
+      <div style="margin-top:1.75rem;display:flex;flex-direction:column;gap:.75rem">
+        <a href="tel:+447771808735" class="btn-gold" style="display:flex;justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
+          Call Us Now
+        </a>
+        <a href="#contact" style="display:block;text-align:center;font-size:.78rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s ease" onmouseover="this.style.color='rgba(255,255,255,.75)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">
+          or send an enquiry
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><rect x="5.5" y="1" width="3" height="5" rx="1.5" fill="currentColor"/><path d="M1 12l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar" role="region" aria-label="Trust indicators">
+  <div class="proof-bar-inner">
+    <div class="proof-item rev">
+      <div class="proof-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1l1.6 3.2 3.5.5-2.55 2.5.6 3.5L7 9l-3.15 1.7.6-3.5L1.9 4.7l3.5-.5L7 1z" fill="#C8922A"/></svg>
+      </div>
+      <div>
+        <div class="proof-val">5.0</div>
+        <div class="proof-lbl">Google Rating</div>
+      </div>
+    </div>
+    <div class="proof-item rev d1">
+      <div class="proof-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="12" height="12" rx="2" stroke="#C8922A" stroke-width="1.3"/><path d="M4 7l2 2 4-4" stroke="#C8922A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="proof-val">100+ Reviews</div>
+        <div class="proof-lbl">All Verified</div>
+      </div>
+    </div>
+    <div class="proof-item rev d2">
+      <div class="proof-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="#C8922A" stroke-width="1.3"/><path d="M7 4.5v2.8l1.5 1.5" stroke="#C8922A" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="proof-val">95%+ Pass Rate</div>
+        <div class="proof-lbl">First Attempt</div>
+      </div>
+    </div>
+    <div class="proof-item rev d3">
+      <div class="proof-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="1.8" stroke="#C8922A" stroke-width="1.3"/><circle cx="9" cy="5" r="1.8" stroke="#C8922A" stroke-width="1.3"/><path d="M1.5 12c0-2 1.6-3.5 3.5-3.5h4c1.9 0 3.5 1.5 3.5 3.5" stroke="#C8922A" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="proof-val">Nurses Worldwide</div>
+        <div class="proof-lbl">UAE · Nigeria · India · Philippines</div>
+      </div>
+    </div>
+    <div class="proof-item rev d4">
+      <div class="proof-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1.5C4.52 1.5 2.5 3.52 2.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.48-2.02-4.5-4.5-4.5z" stroke="#C8922A" stroke-width="1.3"/><circle cx="7" cy="6" r="1.3" fill="#C8922A"/></svg>
+      </div>
+      <div>
+        <div class="proof-val">Cambridge, UK</div>
+        <div class="proof-lbl">Robinson Way, CB2 0SZ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="process" aria-labelledby="hiw-title">
+  <div class="hiw-inner">
+    <div style="text-align:center">
+      <span class="section-label rev">How It Works</span>
+      <h2 class="section-title rev d1" id="hiw-title" style="margin:0 auto .8rem">Your path from overseas nurse<br>to OSCE pass</h2>
+      <p class="section-sub rev d2" style="margin:0 auto">A clear, supported process designed so you know exactly what to expect at every step.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-card rev">
+        <div class="hiw-num" style="background:var(--navy)">1</div>
+        <h3>Choose Your Course</h3>
+        <p>Browse three course formats — Bootcamp, Tailored 1:1, or Workstation Practice — and pick the one that fits your timeline and budget.</p>
+      </div>
+      <div class="hiw-card rev d2">
+        <div class="hiw-num" style="background:var(--teal)">2</div>
+        <h3>Train with Shalu</h3>
+        <p>Receive expert, personalised coaching targeting your specific weaknesses. Every session is focused entirely on your performance and confidence.</p>
+      </div>
+      <div class="hiw-card rev d3">
+        <div class="hiw-num" style="background:var(--gold)">3</div>
+        <h3>Pass Your OSCE</h3>
+        <p>Walk into your exam prepared and confident. Join the 100+ nurses who trusted ONTC Cambridge and came out with a pass certificate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-sec" id="courses" aria-labelledby="courses-title">
+  <div class="courses-inner">
+    <span class="section-label rev">Courses &amp; Pricing</span>
+    <h2 class="section-title rev d1" id="courses-title">Training built around you</h2>
+    <p class="section-sub rev d2">Transparent pricing, clear inclusions. No surprises — just focused OSCE preparation.</p>
+    <div class="courses-grid">
+      <!-- Bootcamp -->
+      <div class="course-card rev">
+        <div class="course-icon">🎓</div>
+        <h3 class="course-name">OSCE Virtual Bootcamp</h3>
+        <p class="course-desc">Intensive structured group programme covering all OSCE stations — ideal for nurses who want comprehensive, efficient preparation.</p>
+        <ul class="course-feats">
+          <li><span class="chk chk-teal">✓</span> All 10 OSCE stations covered</li>
+          <li><span class="chk chk-teal">✓</span> Live virtual sessions</li>
+          <li><span class="chk chk-teal">✓</span> Study materials included</li>
+          <li><span class="chk chk-teal">✓</span> Mock exam practice</li>
+        </ul>
+        <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
+        <a href="tel:+447771808735" class="btn-book btn-dark">Call Us Now</a>
+      </div>
+      <!-- Tailored — featured -->
+      <div class="course-card feat rev d1">
+        <div class="feat-badge">Most Popular</div>
+        <div class="course-icon">🎯</div>
+        <h3 class="course-name">Tailored 1:1 Training</h3>
+        <p class="course-desc">Fully personalised sessions with Shalu — targeting your specific weaknesses and building confidence across every station.</p>
+        <ul class="course-feats">
+          <li><span class="chk chk-white">✓</span> 1:1 sessions with Shalu</li>
+          <li><span class="chk chk-white">✓</span> Flexible scheduling</li>
+          <li><span class="chk chk-white">✓</span> Personalised study plan</li>
+          <li><span class="chk chk-white">✓</span> Session feedback reports</li>
+          <li><span class="chk chk-white">✓</span> WhatsApp support</li>
+        </ul>
+        <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
+        <a href="tel:+447771808735" class="btn-book btn-gold-fill">Call Us Now</a>
+      </div>
+      <!-- Workstations -->
+      <div class="course-card rev d2">
+        <div class="course-icon">🏥</div>
+        <h3 class="course-name">OSCE Workstations</h3>
+        <p class="course-desc">Practice in a real clinical environment using dedicated OSCE-style workstations in Cambridge. Hands-on refinement in exam conditions.</p>
+        <ul class="course-feats">
+          <li><span class="chk chk-gold">✓</span> Real clinical equipment</li>
+          <li><span class="chk chk-gold">✓</span> Cambridge facility</li>
+          <li><span class="chk chk-gold">✓</span> Simulated exam conditions</li>
+          <li><span class="chk chk-gold">✓</span> Expert observation</li>
+        </ul>
+        <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
+        <a href="tel:+447771808735" class="btn-book btn-dark">Call Us Now</a>
+      </div>
+    </div>
+    <p class="rev" style="text-align:center;margin-top:1.75rem;font-size:.85rem;color:var(--muted)">
+      Not sure which course is right for you? <a href="#contact" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(45,138,123,.3)">Get in touch</a> and we'll guide you.
+    </p>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="videos-sec" id="success-stories" aria-labelledby="videos-title">
+  <div class="videos-inner">
+    <span class="section-label rev" style="color:var(--gold-light)">Student Success Stories</span>
+    <h2 class="section-title rev d1" id="videos-title" style="color:#fff">Nurses Trained By ONTC</h2>
+    <p class="section-sub rev d2" style="color:#fff">Watch real international nurses share how ONTC Cambridge helped them prepare, build confidence and pass their OSCE exam.</p>
+    <div class="videos-grid">
+      <div class="vid-card rev">
+        <div class="vid-thumb">
+          <img src="https://placehold.co/640x360/0D1A2A/1A3040" alt="Sobulo's OSCE success story">
+          <div class="vid-play-wrap">
+            <div class="vid-play" aria-label="Play video">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-student">
+            <div class="vid-avatar" style="background:var(--teal)">S</div>
+            <div>
+              <div class="vid-name">Sobulo</div>
+              <div class="vid-country">🇳🇬 Nigeria → UK</div>
+            </div>
+          </div>
+          <p class="vid-quote">"I am very happy with the service provided by Shalu at ONTC. Highly recommend ONTC to anyone preparing for their OSCE."</p>
+        </div>
+      </div>
+      <div class="vid-card rev d2">
+        <div class="vid-thumb">
+          <img src="https://placehold.co/640x360/0A1F18/12362A" alt="Megan's OSCE success story">
+          <div class="vid-play-wrap">
+            <div class="vid-play" style="background:var(--gold)" aria-label="Play video">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-student">
+            <div class="vid-avatar" style="background:var(--gold)">P</div>
+            <div>
+              <div class="vid-name">Megan</div>
+              <div class="vid-country">🇺🇸 USA → UK</div>
+            </div>
+          </div>
+          <p class="vid-quote">"I really enjoyed all my training with ONTC — teaching is great and learning materials are of high quality. Passed first time!"</p>
+        </div>
+      </div>
+      <div class="vid-card rev d3">
+        <div class="vid-thumb">
+          <img src="https://placehold.co/640x360/1A0D2A/2A1840" alt="Akshay's OSCE success story">
+          <div class="vid-play-wrap">
+            <div class="vid-play" style="background:var(--teal)" aria-label="Play video">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-student">
+            <div class="vid-avatar" style="background:#7C3AED">K</div>
+            <div>
+              <div class="vid-name">Akshay</div>
+              <div class="vid-country">🇮🇳 India → UK</div>
+            </div>
+          </div>
+          <p class="vid-quote">"I really enjoyed all aspects of the training with ONTC. It is so nice to see such a flexible approach!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-sec" aria-labelledby="reviews-title">
+  <div class="reviews-inner">
+    <div class="reviews-head">
+      <div>
+        <span class="section-label rev">Verified Google Reviews</span>
+        <h2 class="section-title rev d1" id="reviews-title">International Nurses Trust ONTC</h2>
+      </div>
+      <div class="google-badge rev d2" aria-label="Google review score: 5.0 from 100+ reviews">
+        <div>
+          <div class="g-score">5.0</div>
+          <div class="g-stars" aria-label="5 stars">★★★★★</div>
+          <div class="g-count">100+ reviews on Google</div>
+        </div>
+        <svg viewBox="0 0 24 24" class="g-logo" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-card rev">
+        <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+        <p class="rev-text">"I highly recommend ONTC to all international nurses who want to strengthen their clinical communication, assessment skills and overall exam performance. I had a fantastic learning experience and passed without stress or anxiety."</p>
+        <div class="rev-author">
+          <div class="rev-av" style="background:var(--teal)">S</div>
+          <div><div class="rev-name">Sobulo</div><div class="rev-loc">🇳🇬 Nigeria</div></div>
+        </div>
+      </div>
+      <div class="rev-card rev d1">
+        <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+        <p class="rev-text">"I am really grateful for OSCE Nurse Training Cambridge under Ms. Shalu Kumar's guidance and support. It was very vital in passing my OSCE. To those who are still preparing for the exam, I highly recommend the ONTC. You would never go wrong with Ms. Shalu's guidance. She's the best OSCE trainer, teacher and a mentor. All the materials will be provided for you to practice and make use of it."</p>
+        <div class="rev-author">
+          <div class="rev-av" style="background:var(--gold)">G</div>
+          <div><div class="rev-name">Grande</div><div class="rev-loc">🇵🇭 Philippines</div></div>
+        </div>
+      </div>
+      <div class="rev-card rev d2">
+        <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+        <p class="rev-text">"I'm very grateful for the tutoring I received. I passed my OSCE today, and the lessons were a huge part of my success. Shalu explains concepts clearly, provides helpful practice scenarios and gives constructive feedback. I felt much more confident going into the exam. Highly recommend!"</p>
+        <div class="rev-author">
+          <div class="rev-av" style="background:var(--navy)">J</div>
+          <div><div class="rev-name">Jeewan</div><div class="rev-loc">🇮🇳 India</div></div>
+        </div>
+      </div>
+      <div class="rev-card rev">
+        <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+        <p class="rev-text">"As a US trained nurse who has been licensed for 17 years and has always and only worked in the operating room, sitting a practical exam had me rethinking my life choices. I knew I needed professional help to have a legitimate chance to pass the OSCE. Ms Shalu has an excellent course and provided all the tools I needed to feel confident and prepared. Her advice made all the difference, and I passed on my first try. I highly recommend her course and in-person mock exam."</p>
+        <div class="rev-author">
+          <div class="rev-av" style="background:#7C3AED">M</div>
+          <div><div class="rev-name">Megan</div><div class="rev-loc">🇺🇸 USA</div></div>
+        </div>
+      </div>
+      <div class="rev-card rev d1">
+        <div class="rev-stars" aria-label="5 stars">★★★★★</div>
+        <p class="rev-text">"I attended the OSCE Nurse Training in Cambridge and had a wonderful experience. The trainers were highly knowledgeable and incredibly supportive. I especially appreciated the detailed focus on each station, the personalised feedback and the confidence they helped me build. The mock exams were very realistic and played a key role in helping me manage my nerves. I successfully passed my OSCE and would highly recommend this training to any international nurse preparing for NMC registration."</p>
+        <div class="rev-author">
+          <div class="rev-av" style="background:#DC2626">A</div>
+          <div><div class="rev-name">Akshay</div><div class="rev-loc">🇮🇳 India</div></div>
+        </div>
+      </div>
+      <!-- Invite card -->
+      <div class="rev-invite rev d2">
+        <div class="big-star">⭐</div>
+        <p>Passed your OSCE with us?</p>
+        <small>Your review helps the next international nurse find us.</small>
+        <a href="#" class="btn-outline-navy" target="_blank" rel="noopener">Leave a Review →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SHALU -->
+<section class="about-sec" id="about" aria-labelledby="about-title">
+  <div class="about-inner">
+    <div class="about-img-wrap rev">
+      <img src="shalu.jpeg" alt="Shalu Kumar — OSCE Nurse Trainer, Cambridge" class="about-img">
+      <div class="about-float" aria-hidden="true">
+        <div class="float-big">20 Years'</div>
+        <div class="float-lbl">Nursing Experience</div>
+      </div>
+    </div>
+    <div>
+      <span class="section-label rev">Meet Your Trainer</span>
+      <div class="rev d1">
+        <blockquote class="about-quote">
+          "I know how stressful the OSCE feels as an international nurse. I've dedicated my career to making sure you pass with confidence."
+        </blockquote>
+      </div>
+      <p class="about-bio rev d2">
+        Shalu Kumar is a highly experienced nurse trainer based in Cambridge, specialising in helping international nurses prepare for the NMC OSCE exam. With over 20 years of experience across the NHS and private healthcare sector, she combines deep clinical expertise with supportive, personalised teaching tailored to every nurse's individual needs.
+      </p>
+      <p class="about-bio rev d2">
+        Before founding ONTC Cambridge, Shalu led one of the UK's largest OSCE training programmes at Cambridge University Hospitals NHS Foundation Trust, helping overseas nurses achieve strong pass rates and excellent course feedback. Originally trained in India before relocating to the United Kingdom in 1998, she has held senior roles across both NHS and private healthcare, including at Spire Healthcare, and is dedicated to helping nurses build confidence and succeed in their OSCE journey.
+      </p>
+      <div class="credential-tags rev d3">
+        <span class="tag">Registered Nurse (NMC)</span>
+        <span class="tag">OSCE Specialist Trainer</span>
+        <span class="tag">Cambridge-based</span>
+        <span class="tag">95%+ Pass Rate</span>
+        <span class="tag">25K Youtube Subscribers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <span class="section-label rev">Common Questions</span>
+    <h2 class="section-title rev d1" id="faq-title">Everything you need to know</h2>
+    <div class="faq-grid">
+      <div class="faq-list" role="list">
+
+        <div class="faq-item rev" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            What is the OSCE exam and why do I need training?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p class="faq-body-inner">The OSCE (Objective Structured Clinical Examination) is a mandatory skills assessment for overseas nurses registering with the NMC to work in the UK. It tests clinical competencies across multiple stations. Specialist training dramatically increases your pass rate — our students achieve 95%+ success on their first attempt.</p>
+          </div>
+        </div>
+
+        <div class="faq-item rev d1" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            How long does OSCE training take?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p class="faq-body-inner">Training duration depends on your chosen course and your current skill level. The Virtual Bootcamp is an intensive structured programme. Tailored 1:1 training is flexible and based around your specific needs and timeline. Contact us and we'll recommend the right approach for your situation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item rev d2" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            Can I train online, or do I need to come to Cambridge?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p class="faq-body-inner">We offer both options. The Virtual Bootcamp is fully online. Tailored 1:1 training can be done virtually or in-person. Workstation practice requires attending our Cambridge facility, where you'll use real clinical equipment in exam-simulated conditions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item rev d3" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            I'm from overseas — can you help regardless of my country?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p class="faq-body-inner">Absolutely. We have successfully trained nurses from the UAE, Nigeria, India, Philippines, Kenya, Pakistan, and many more. The OSCE is the same for all internationally educated nurses applying to register with the NMC, and our training is designed specifically for this audience.</p>
+          </div>
+        </div>
+
+        <div class="faq-item rev d4" role="listitem">
+          <button class="faq-btn" aria-expanded="false">
+            What if I don't pass my OSCE first time?
+            <span class="faq-ico" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p class="faq-body-inner">Our 95%+ pass rate means the vast majority of our students pass first time. In the rare event that a student needs to resit, we work closely with them to identify what went wrong and prepare specifically for the resit. Get in touch to discuss your individual situation.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- Contact aside -->
+      <div class="faq-aside rev d2" id="contact">
+        <h3>Still have questions?<br>Let's talk.</h3>
+        <p class="faq-aside-sub">Reach out directly — we're here to help you understand what's right for your situation.</p>
+        <div class="contact-rows">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-lbl">Phone / WhatsApp</div>
+              <a href="tel:+447771808735" class="contact-val">+44 (0) 7771 808 735</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-lbl">Email</div>
+              <a href="mailto:oscenursetraining@outlook.com" class="contact-val">oscenursetraining@outlook.com</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-lbl">Address</div>
+              <span class="contact-val">Robinson Way, Cambridge CB2 0SZ</span>
+            </div>
+          </div>
+        </div>
+        <a href="mailto:oscenursetraining@outlook.com" class="btn-white">Send an Enquiry →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<!-- RESOURCES -->
+<section class="resources-sec" id="resources" aria-labelledby="resources-title">
+  <div class="resources-inner">
+    <span class="section-label rev" style="color:var(--gold-light)">Resources</span>
+    <h2 class="section-title rev d1" id="resources-title" style="color:#fff">Learn From Our YouTube Channel</h2>
+    <p class="section-sub rev d2" style="color:#fff">Free training videos to help you understand the NMC OSCE exam, stay up to date with syllabus changes, and build your confidence before exam day.</p>
+
+    <p class="yt-sub-head rev">Most Recent</p>
+    <div class="yt-grid">
+      <div class="yt-card rev">
+        <div class="yt-thumb yt-facade" data-vid="fDgCtOhk1dQ"><img src="https://img.youtube.com/vi/fDgCtOhk1dQ/maxresdefault.jpg" alt="NMC OSCE EVIDENCED BASED PRACTICE Cervical Screening" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+      <div class="yt-card rev d1">
+        <div class="yt-thumb yt-facade" data-vid="324QiQD_8LU"><img src="https://img.youtube.com/vi/324QiQD_8LU/maxresdefault.jpg" alt="NMC OSCE Pain care plan for suspected DVT scenario Made Easy" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+      <div class="yt-card rev d2">
+        <div class="yt-thumb yt-facade" data-vid="i1vcQmuTKEg"><img src="https://img.youtube.com/vi/i1vcQmuTKEg/maxresdefault.jpg" alt="NMC OSCE – Super easy way to write RISK OF PULMONARY EMBOLISM care NEW 2026" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+    </div>
+
+    <p class="yt-sub-head rev">Most Popular</p>
+    <div class="yt-grid">
+      <div class="yt-card rev">
+        <div class="yt-thumb yt-facade" data-vid="fQtz0fXXQ6A"><img src="https://img.youtube.com/vi/fQtz0fXXQ6A/maxresdefault.jpg" alt="NMC OSCE Exam Introduction" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+      <div class="yt-card rev d1">
+        <div class="yt-thumb yt-facade" data-vid="7wslsjf2Ac8"><img src="https://img.youtube.com/vi/7wslsjf2Ac8/maxresdefault.jpg" alt="NMC OSCE: Assessment Station and Top Tips" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+      <div class="yt-card rev d2">
+        <div class="yt-thumb yt-facade" data-vid="JEGq9Ou6oWA"><img src="https://img.youtube.com/vi/JEGq9Ou6oWA/maxresdefault.jpg" alt="NMC OSCE Evidenced Based Practice" loading="lazy"><button class="yt-play-btn" aria-label="Play video"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="yt-channel-cta rev" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+      <a href="https://www.youtube.com/@oscenursetrainingcambridge3851" target="_blank" rel="noopener" class="btn-outline-navy" style="border-color:rgba(255,255,255,.3);color:#fff;font-size:.9rem;padding:.75rem 1.75rem">
+        Visit Our YouTube Channel
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://facebook.com/OSCEnursetraining/" target="_blank" rel="noopener" class="btn-outline-navy" style="border-color:rgba(255,255,255,.3);color:#fff;font-size:.9rem;padding:.75rem 1.75rem">
+        Visit Our Facebook Page
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="/" class="f-logo"><img src="osce-logo.png" alt="ONTC Cambridge"></a>
+        <p class="f-tagline">Helping international nurses pass their OSCE and build their career in the UK. Cambridge-based, globally trusted.</p>
+        <div class="f-socials">
+          <a href="https://facebook.com/OSCEnursetraining/" class="f-social" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/shalu-kumar-aaa512221" class="f-social" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="f-social" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#101D30"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="f-col-title">Courses</h4>
+        <ul class="f-links">
+          <li><a href="#courses">OSCE Virtual Bootcamp</a></li>
+          <li><a href="#courses">Tailored 1:1 Training</a></li>
+          <li><a href="#courses">OSCE Workstations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="f-col-title">Company</h4>
+        <ul class="f-links">
+          <li><a href="#about">About Shalu</a></li>
+          <li><a href="#success-stories">Success Stories</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="f-col-title">Contact</h4>
+        <ul class="f-links">
+          <li><a href="tel:+447771808735">+44 (0) 7771 808 735</a></li>
+          <li><a href="mailto:oscenursetraining@outlook.com">oscenursetraining@outlook.com</a></li>
+          <li><a href="#">Robinson Way, Cambridge</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="f-copy">© 2025 OSCE Nurse Training Cambridge. All rights reserved.</p>
+      <div class="f-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mob-bar" role="complementary" aria-label="Quick booking actions">
+  <a href="#courses" class="btn-gold">Book a Course →</a>
+  <a href="tel:+447771808735" class="mob-call" aria-label="Call us now">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+</div>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 55), { passive: true });
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+  // Trigger hero immediately
+  setTimeout(() => document.querySelectorAll('.hero .rev').forEach(el => el.classList.add('vis')), 80);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  // Mobile nav
+  const burger = document.getElementById('nav-burger');
+  const links  = document.getElementById('nav-links');
+  let navOpen  = false;
+  burger.addEventListener('click', () => {
+    navOpen = !navOpen;
+    burger.setAttribute('aria-expanded', navOpen);
+    if (navOpen) {
+      Object.assign(links.style, {
+        display:'flex', flexDirection:'column', position:'fixed',
+        top:'72px', left:'0', right:'0', bottom:'0',
+        background:'rgba(16,29,48,.97)', padding:'2rem 2.5rem',
+        gap:'1.5rem', backdropFilter:'blur(14px)', zIndex:'150'
+      });
+    } else {
+      links.style.display = '';
+    }
+  });
+  // Close nav on link click
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navOpen = false; burger.setAttribute('aria-expanded', 'false'); links.style.display = '';
+  }));
+
+  // Animated background paths
+  (function() {
+    const container = document.getElementById('hero-paths');
+    if (!container) return;
+    const NS = 'http://www.w3.org/2000/svg';
+
+    function buildPaths(position) {
+      return Array.from({length: 36}, function(_, i) {
+        return {
+          d: 'M-'+(380-i*5*position)+' -'+(189+i*6)+
+             'C-'+(380-i*5*position)+' -'+(189+i*6)+
+             ' -'+(312-i*5*position)+' '+(216-i*6)+
+             ' '+(152-i*5*position)+' '+(343-i*6)+
+             'C'+(616-i*5*position)+' '+(470-i*6)+
+             ' '+(684-i*5*position)+' '+(875-i*6)+
+             ' '+(684-i*5*position)+' '+(875-i*6),
+          baseOpacity: Math.min(0.1 + i * 0.03, 0.85),
+          width: 0.5 + i * 0.03
+        };
+      });
+    }
+
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 696 316');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+    var pathData = [];
+    [1, -1].forEach(function(pos) {
+      buildPaths(pos).forEach(function(p) {
+        var el = document.createElementNS(NS, 'path');
+        el.setAttribute('d', p.d);
+        el.setAttribute('stroke', 'currentColor');
+        el.setAttribute('stroke-width', String(p.width));
+        svg.appendChild(el);
+        pathData.push({ el: el, baseOpacity: p.baseOpacity });
+      });
+    });
+
+    container.appendChild(svg);
+
+    requestAnimationFrame(function() {
+      var animated = pathData.map(function(p) {
+        var len = 1500;
+        try { len = p.el.getTotalLength() || 1500; } catch(e) {}
+        var dur = (20 + Math.random() * 10) * 1000;
+        var start = performance.now() - Math.random() * dur;
+        return { el: p.el, baseOpacity: p.baseOpacity, len: len, dur: dur, start: start };
+      });
+
+      function frame(now) {
+        animated.forEach(function(p) {
+          var t = ((now - p.start) % p.dur) / p.dur;
+          var dash = p.len * 0.3;
+          p.el.setAttribute('stroke-dasharray', dash + ' ' + p.len);
+          p.el.setAttribute('stroke-dashoffset', String(-(t * p.len * 1.3)));
+          var op = p.baseOpacity * (0.4 + 0.6 * Math.abs(Math.sin(t * Math.PI)));
+          p.el.setAttribute('stroke-opacity', String(op));
+        });
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    });
+  })();
+
+  // Click-to-play YouTube facades
+  document.querySelectorAll('.yt-facade').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.vid;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+      el.innerHTML = '';
+      el.appendChild(iframe);
+    });
+  });
+</script>
+
+</body>
+</html>
