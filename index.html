@@ -81,8 +81,9 @@
       display: flex; align-items: center;
     }
     .nav-logo img {
-      height: 48px; width: auto; object-fit: contain; display: block;
-      filter: invert(1) brightness(1.1);
+      height: 140px; width: auto; object-fit: contain; display: block;
+      filter: brightness(0) invert(1);
+      transition: filter .3s ease;
     }
     .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
     .nav-links a {
@@ -561,8 +562,8 @@
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .f-logo { text-decoration: none; display: inline-block; margin-bottom: .9rem; }
     .f-logo img {
-      height: 44px; width: auto; object-fit: contain; display: block;
-      filter: invert(1) brightness(1.1);
+      height: 140px; width: auto; object-fit: contain; display: block;
+      filter: brightness(0) invert(1);
     }
     .f-tagline { font-size: .82rem; color: #fff; line-height: 1.65; max-width: 250px; margin-bottom: 1.4rem; }
     .f-socials { display: flex; gap: .65rem; }
@@ -619,7 +620,7 @@
 <!-- NAV -->
 <nav id="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="OSCE Nurse Training Cambridge">
-    <img src="osce-logo.png" alt="ONTC Cambridge">
+    <img src="ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge">
   </a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#courses">Courses</a></li>
@@ -693,10 +694,11 @@
           <div class="hero-stat-lbl">Pass Rate</div>
         </div>
         <div style="text-align:center">
-          <div style="height:2.8rem;display:flex;align-items:center;justify-content:center">
-            <span class="hero-stat-val">30+</span>
+          <div style="height:2.8rem;display:flex;align-items:center;justify-content:center;gap:.5rem">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#fff;width:2rem;height:2rem;flex-shrink:0"><path d="M23.5 6.2a3.01 3.01 0 00-2.12-2.13C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.47A3.01 3.01 0 00.5 6.2 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.8 3.01 3.01 0 002.12 2.13C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.47a3.01 3.01 0 002.12-2.13A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.8zM9.75 15.52V8.48L15.5 12l-5.75 3.52z"/></svg>
+            <span class="hero-stat-val">25k+</span>
           </div>
-          <div class="hero-stat-lbl">Countries Represented</div>
+          <div class="hero-stat-lbl">Subscribers</div>
         </div>
         <div style="text-align:center">
           <div style="height:2.8rem;display:flex;align-items:center;justify-content:center">
@@ -1185,7 +1187,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="/" class="f-logo"><img src="osce-logo.png" alt="ONTC Cambridge"></a>
+        <a href="/" class="f-logo"><img src="ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge"></a>
         <p class="f-tagline">Helping international nurses pass their OSCE and build their career in the UK. Cambridge-based, globally trusted.</p>
         <div class="f-socials">
           <a href="https://facebook.com/OSCEnursetraining/" class="f-social" target="_blank" rel="noopener" aria-label="Facebook">
