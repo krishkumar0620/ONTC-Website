@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OSCE Nurse Training Cambridge | 100+ ★★★★★ Reviews | 95%+ Pass Rate</title>
-  <meta name="description" content="Personalised OSCE training for international nurses in Cambridge. 100+ five-star Google reviews. 95%+ pass rate. Book your course today.">
+  <title>OSCE Nurse Training Cambridge | 150+ ★★★★★ Reviews | 95%+ Pass Rate</title>
+  <meta name="description" content="Personalised OSCE training for international nurses in Cambridge. 150+ five-star Google reviews. 95%+ pass rate. Book your course today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
@@ -81,7 +81,7 @@
       display: flex; align-items: center;
     }
     .nav-logo img {
-      height: 140px; width: auto; object-fit: contain; display: block;
+      height: 160px; width: auto; object-fit: contain; display: block;
       filter: brightness(0) invert(1);
       transition: filter .3s ease;
     }
@@ -229,7 +229,7 @@
       margin-top: .25rem; margin-bottom: 1.5rem;
       letter-spacing: .04em;
     }
-    .hero-card-stars { color: #FBBC04; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: .25rem; }
+    .hero-card-stars { color: #FBBC04; font-size: 1.6rem; letter-spacing: 2px; margin-bottom: .25rem; }
     .hero-card-review-count { font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 1.5rem; }
     .hero-card-divider { height: 1px; background: rgba(255,255,255,.09); margin-bottom: 1.5rem; }
     .hero-stat-row { display: flex; justify-content: space-between; margin-bottom: 1.1rem; }
@@ -247,6 +247,7 @@
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-card { display: none; }
+      #planes-layer { display: none; }
     }
 
     /* ── PROOF BAR ── */
@@ -274,7 +275,13 @@
     .proof-lbl { font-size: .73rem; color: rgba(255,255,255,.40); margin-top: .1rem; }
 
     /* ── HOW IT WORKS ── */
-    .hiw { background: var(--bg-warm); padding: 6rem 2.5rem; }
+    .hiw {
+      background: linear-gradient(rgba(0,48,135,0.60), rgba(0,48,135,0.60)), url('hiw-nurses.jpg') center/cover no-repeat;
+      padding: 6rem 2.5rem;
+      border-top: 3px solid #ffffff;
+    }
+    .hiw .section-title { color: #fff; }
+    .hiw .section-sub   { color: rgba(255,255,255,.78); }
     .hiw-inner { max-width: 1100px; margin: 0 auto; }
     .section-label { display: inline-block; font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: .9rem; }
     .section-title {
@@ -295,10 +302,16 @@
       position: absolute; top: 2.5rem;
       left: calc(16.67% + 1.5rem); right: calc(16.67% + 1.5rem);
       height: 1px;
-      background: linear-gradient(90deg, rgba(65,182,230,.5) 0%, rgba(0,94,184,.5) 100%);
-      opacity: .4;
+      background: linear-gradient(90deg, rgba(65,182,230,.7) 0%, rgba(255,255,255,.4) 100%);
+      opacity: .6;
     }
-    .hiw-card { text-align: center; padding: 2.5rem 1.75rem; }
+    .hiw-card {
+      text-align: center; padding: 2.5rem 1.75rem;
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 16px;
+    }
     .hiw-num {
       width: 50px; height: 50px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -307,8 +320,8 @@
       box-shadow: 0 4px 18px rgba(0,48,135,.22);
       position: relative; z-index: 1;
     }
-    .hiw-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); letter-spacing: -.02em; margin-bottom: .65rem; }
-    .hiw-card p { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+    .hiw-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; color: #fff; letter-spacing: -.02em; margin-bottom: .65rem; }
+    .hiw-card p { font-size: .875rem; color: rgba(255,255,255,.75); line-height: 1.65; }
     @media (max-width: 640px) {
       .hiw-steps { grid-template-columns: 1fr; }
       .hiw-steps::before { display: none; }
@@ -345,10 +358,10 @@
     .course-card:not(.feat) .course-desc { color: var(--muted); }
     .feat .course-desc { color: rgba(255,255,255,.58); }
     .course-feats { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: .55rem; }
-    .course-feats li { display: flex; align-items: center; gap: .6rem; font-size: .82rem; }
+    .course-feats li { display: flex; align-items: flex-start; gap: .6rem; font-size: .82rem; }
     .course-card:not(.feat) .course-feats li { color: var(--text); }
     .feat .course-feats li { color: rgba(255,255,255,.78); }
-    .chk { width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; }
+    .chk { width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; margin-top: .18rem; }
     .chk-teal { background: rgba(0,94,184,.12); color: var(--teal); }
     .chk-gold { background: rgba(65,182,230,.12); color: var(--gold); }
     .chk-white { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
@@ -562,7 +575,7 @@
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .f-logo { text-decoration: none; display: inline-block; margin-bottom: .9rem; }
     .f-logo img {
-      height: 140px; width: auto; object-fit: contain; display: block;
+      height: 160px; width: auto; object-fit: contain; display: block;
       filter: brightness(0) invert(1);
     }
     .f-tagline { font-size: .82rem; color: #fff; line-height: 1.65; max-width: 250px; margin-bottom: 1.4rem; }
@@ -678,7 +691,7 @@
       <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:.75rem;">OSCE Nurse Training Cambridge</div>
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
         <div>
-          <div class="hero-card-big" aria-label="100+ reviews">100+</div>
+          <div class="hero-card-big" aria-label="150+ reviews">150+</div>
           <div class="hero-card-label">Verified Google Reviews</div>
           <div class="hero-card-stars" aria-label="Five stars">★★★★★</div>
           <div class="hero-card-review-count">5 Star Rating</div>
@@ -715,8 +728,8 @@
         <a href="tel:+447771808735" class="btn-gold" style="display:flex;justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
           Call Us Now
         </a>
-        <a href="#contact" style="display:block;text-align:center;font-size:.78rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s ease" onmouseover="this.style.color='rgba(255,255,255,.75)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">
-          or send an enquiry
+        <a href="#contact" class="btn-gold" style="display:flex;justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
+          Send an Enquiry
         </a>
       </div>
     </div>
@@ -744,7 +757,7 @@
         <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="12" height="12" rx="2" stroke="#C8922A" stroke-width="1.3"/><path d="M4 7l2 2 4-4" stroke="#C8922A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <div class="proof-val">100+ Reviews</div>
+        <div class="proof-val">150+ Reviews</div>
         <div class="proof-lbl">All Verified</div>
       </div>
     </div>
@@ -782,25 +795,25 @@
 <section class="hiw" id="process" aria-labelledby="hiw-title">
   <div class="hiw-inner">
     <div style="text-align:center">
-      <span class="section-label rev">How It Works</span>
+      <span class="section-label rev" style="color:#fff">How It Works</span>
       <h2 class="section-title rev d1" id="hiw-title" style="margin:0 auto .8rem">Your path from overseas nurse<br>to OSCE pass</h2>
-      <p class="section-sub rev d2" style="margin:0 auto">A clear, supported process designed so you know exactly what to expect at every step.</p>
+      <p class="section-sub rev d2" style="margin:0 auto">A clear process with expert support throughout every stage of your training journey.</p>
     </div>
     <div class="hiw-steps">
       <div class="hiw-card rev">
         <div class="hiw-num" style="background:var(--navy)">1</div>
         <h3>Choose Your Course</h3>
-        <p>Browse three course formats — Bootcamp, Tailored 1:1, or Workstation Practice — and pick the one that fits your timeline and budget.</p>
+        <p>Explore our Virtual, Hybrid and Tailored courses to find the training option that works best for you.</p>
       </div>
       <div class="hiw-card rev d2">
         <div class="hiw-num" style="background:var(--teal)">2</div>
-        <h3>Train with Shalu</h3>
+        <h3>Train With ONTC</h3>
         <p>Receive expert, personalised coaching targeting your specific weaknesses. Every session is focused entirely on your performance and confidence.</p>
       </div>
       <div class="hiw-card rev d3">
         <div class="hiw-num" style="background:var(--gold)">3</div>
         <h3>Pass Your OSCE</h3>
-        <p>Walk into your exam prepared and confident. Join the 100+ nurses who trusted ONTC Cambridge and came out with a pass certificate.</p>
+        <p>Walk into your exam prepared and confident. Join the 300+ nurses who trusted ONTC Cambridge and came out with a pass certificate.</p>
       </div>
     </div>
   </div>
@@ -816,13 +829,17 @@
       <!-- Bootcamp -->
       <div class="course-card rev">
         <div class="course-icon">🎓</div>
-        <h3 class="course-name">OSCE Virtual Bootcamp</h3>
-        <p class="course-desc">Intensive structured group programme covering all OSCE stations — ideal for nurses who want comprehensive, efficient preparation.</p>
+        <h3 class="course-name">NMC OSCE
+Virtual Course</h3>
+        <p class="course-desc">Structured programme delivered via online live sessions and learning platform.</p>
         <ul class="course-feats">
-          <li><span class="chk chk-teal">✓</span> All 10 OSCE stations covered</li>
-          <li><span class="chk chk-teal">✓</span> Live virtual sessions</li>
+          <li><span class="chk chk-teal">✓</span> Comprehensive online OSCE preparation for nurses</li>
+          <li><span class="chk chk-teal">✓</span> Flexible scheduling</li>
+          <li><span class="chk chk-teal">✓</span> Coverage of all 10 OSCE stations — live virtual sessions + recordings</li>
+          <li><span class="chk chk-teal">✓</span> NMC-registered OSCE trainers</li>
+          <li><span class="chk chk-teal">✓</span> Revision platform with demo videos</li>
           <li><span class="chk chk-teal">✓</span> Study materials included</li>
-          <li><span class="chk chk-teal">✓</span> Mock exam practice</li>
+          <li><span class="chk chk-teal">✓</span> Full 10-station mock exam with feedback</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
         <a href="tel:+447771808735" class="btn-book btn-dark">Call Us Now</a>
@@ -831,14 +848,16 @@
       <div class="course-card feat rev d1">
         <div class="feat-badge">Most Popular</div>
         <div class="course-icon">🎯</div>
-        <h3 class="course-name">Tailored 1:1 Training</h3>
-        <p class="course-desc">Fully personalised sessions with Shalu — targeting your specific weaknesses and building confidence across every station.</p>
+        <h3 class="course-name">NMC OSCE Hybrid Course</h3>
+        <p class="course-desc">Structured programme delivered via online live sessions, learning platform &amp; face-to-face training days.</p>
         <ul class="course-feats">
-          <li><span class="chk chk-white">✓</span> 1:1 sessions with Shalu</li>
+          <li><span class="chk chk-white">✓</span> Blended OSCE preparation: online lessons covering theory + 5 practical training days</li>
           <li><span class="chk chk-white">✓</span> Flexible scheduling</li>
-          <li><span class="chk chk-white">✓</span> Personalised study plan</li>
-          <li><span class="chk chk-white">✓</span> Session feedback reports</li>
-          <li><span class="chk chk-white">✓</span> WhatsApp support</li>
+          <li><span class="chk chk-white">✓</span> Hands-on practise of all stations with real clinical equipment</li>
+          <li><span class="chk chk-white">✓</span> Personalised feedback to grow confidence</li>
+          <li><span class="chk chk-white">✓</span> NMC-registered OSCE trainers</li>
+          <li><span class="chk chk-white">✓</span> Revision platform with videos + OSCE study book included</li>
+          <li><span class="chk chk-white">✓</span> Full 10-station face-to-face mock exam with feedback</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
         <a href="tel:+447771808735" class="btn-book btn-gold-fill">Call Us Now</a>
@@ -846,13 +865,15 @@
       <!-- Workstations -->
       <div class="course-card rev d2">
         <div class="course-icon">🏥</div>
-        <h3 class="course-name">OSCE Workstations</h3>
-        <p class="course-desc">Practice in a real clinical environment using dedicated OSCE-style workstations in Cambridge. Hands-on refinement in exam conditions.</p>
+        <h3 class="course-name">NMC OSCE Tailored Course</h3>
+        <p class="course-desc">Structured individual tailored training sessions.</p>
         <ul class="course-feats">
-          <li><span class="chk chk-gold">✓</span> Real clinical equipment</li>
-          <li><span class="chk chk-gold">✓</span> Cambridge facility</li>
-          <li><span class="chk chk-gold">✓</span> Simulated exam conditions</li>
-          <li><span class="chk chk-gold">✓</span> Expert observation</li>
+          <li><span class="chk chk-gold">✓</span> Focused training for a few key stations — ideal for nurses returning for an OSCE resit after previous training completed elsewhere</li>
+          <li><span class="chk chk-gold">✓</span> Flexible scheduling</li>
+          <li><span class="chk chk-gold">✓</span> Stations covered in online or practical training sessions as needed</li>
+          <li><span class="chk chk-gold">✓</span> Support and feedback to grow confidence</li>
+          <li><span class="chk chk-gold">✓</span> Experienced NMC registered trainers specialising in OSCE exam training</li>
+          <li><span class="chk chk-gold">✓</span> Study materials included</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
         <a href="tel:+447771808735" class="btn-book btn-dark">Call Us Now</a>
@@ -943,11 +964,11 @@
         <span class="section-label rev">Verified Google Reviews</span>
         <h2 class="section-title rev d1" id="reviews-title">International Nurses Trust ONTC</h2>
       </div>
-      <div class="google-badge rev d2" aria-label="Google review score: 5.0 from 100+ reviews">
+      <div class="google-badge rev d2" aria-label="Google review score: 5.0 from 150+ reviews">
         <div>
           <div class="g-score">5.0</div>
           <div class="g-stars" aria-label="5 stars">★★★★★</div>
-          <div class="g-count">100+ reviews on Google</div>
+          <div class="g-count">150+ reviews on Google</div>
         </div>
         <svg viewBox="0 0 24 24" class="g-logo" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -1067,7 +1088,7 @@
             <span class="faq-ico" aria-hidden="true">+</span>
           </button>
           <div class="faq-body" role="region">
-            <p class="faq-body-inner">Training duration depends on your chosen course and your current skill level. The Virtual Bootcamp is an intensive structured programme. Tailored 1:1 training is flexible and based around your specific needs and timeline. Contact us and we'll recommend the right approach for your situation.</p>
+            <p class="faq-body-inner">Training duration depends on your chosen course, time required for revision keeping in mind your personal and work commitments. We would generally recommend a period of 10 weeks from start of training to taking your OSCE exam.</p>
           </div>
         </div>
 
@@ -1077,7 +1098,7 @@
             <span class="faq-ico" aria-hidden="true">+</span>
           </button>
           <div class="faq-body" role="region">
-            <p class="faq-body-inner">We offer both options. The Virtual Bootcamp is fully online. Tailored 1:1 training can be done virtually or in-person. Workstation practice requires attending our Cambridge facility, where you'll use real clinical equipment in exam-simulated conditions.</p>
+            <p class="faq-body-inner">We offer both options. The Virtual course is fully online and includes an online mock exam. Our blended course starts with online lessons to cover the theory part and then you attend 5 practice days to do hands-on practise using real clinical equipment in exam-simulated conditions. Tailored 1:1 training can be done virtually or in-person as per your needs.</p>
           </div>
         </div>
 
@@ -1087,7 +1108,7 @@
             <span class="faq-ico" aria-hidden="true">+</span>
           </button>
           <div class="faq-body" role="region">
-            <p class="faq-body-inner">Absolutely. We have successfully trained nurses from the UAE, Nigeria, India, Philippines, Kenya, Pakistan, and many more. The OSCE is the same for all internationally educated nurses applying to register with the NMC, and our training is designed specifically for this audience.</p>
+            <p class="faq-body-inner">Absolutely. We have successfully trained nurses from the UAE, Nigeria, Ghana, India, Philippines, Nepal, Romania, Kenya, Pakistan, US, New Zealand, Australia, Sri Lanka, Hong Kong and many more. The OSCE is the same for all internationally educated nurses applying to register with the NMC, and our training is designed specifically for this audience.</p>
           </div>
         </div>
 
@@ -1097,7 +1118,7 @@
             <span class="faq-ico" aria-hidden="true">+</span>
           </button>
           <div class="faq-body" role="region">
-            <p class="faq-body-inner">Our 95%+ pass rate means the vast majority of our students pass first time. In the rare event that a student needs to resit, we work closely with them to identify what went wrong and prepare specifically for the resit. Get in touch to discuss your individual situation.</p>
+            <p class="faq-body-inner">We are hugely proud of our above 95% pass rate at first attempt which means most of our nurses pass first time. In the rare event that a nurse needs to resit, we work closely with them to identify what went wrong and prepare specifically for the resit.</p>
           </div>
         </div>
 
@@ -1204,9 +1225,9 @@
       <div>
         <h4 class="f-col-title">Courses</h4>
         <ul class="f-links">
-          <li><a href="#courses">OSCE Virtual Bootcamp</a></li>
-          <li><a href="#courses">Tailored 1:1 Training</a></li>
-          <li><a href="#courses">OSCE Workstations</a></li>
+          <li><a href="#courses">NMC OSCE Virtual Course</a></li>
+          <li><a href="#courses">NMC OSCE Hybrid Course</a></li>
+          <li><a href="#courses">NMC OSCE Tailored Course</a></li>
         </ul>
       </div>
       <div>
@@ -1295,7 +1316,7 @@
     navOpen = false; burger.setAttribute('aria-expanded', 'false'); links.style.display = '';
   }));
 
-  // Animated background paths
+  // Animated background paths + country flag circles
   (function() {
     const container = document.getElementById('hero-paths');
     if (!container) return;
