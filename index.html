@@ -246,8 +246,12 @@
     @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-card { display: block; max-width: 480px; margin: 0 auto; }
+      .hero-card { display: block; max-width: 480px; margin: 0 auto; backdrop-filter: none; background: rgba(0,35,102,.7); }
       #planes-layer { display: none; }
+      /* Remove expensive paint layers on mobile */
+      .hero-bg { display: none; }
+      .hero-accent { display: none; }
+      body::after { display: none; }
     }
 
     /* ── PROOF BAR ── */
