@@ -248,10 +248,16 @@
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .hero-card { display: block; max-width: 480px; margin: 0 auto; backdrop-filter: none; background: rgba(0,35,102,.7); }
       #planes-layer { display: none; }
+      #hero-paths { display: none; }
       /* Remove expensive paint layers on mobile */
       .hero-bg { display: none; }
       .hero-accent { display: none; }
       body::after { display: none; }
+      /* Simplify multi-layer gradient to a single linear gradient */
+      .hero-glow { background: linear-gradient(160deg, #002366 0%, #003087 100%); }
+      /* Disable CSS animations */
+      .hero-eyebrow .pulse { animation: none; }
+      .hero-scroll-hint { animation: none; }
     }
 
     /* ── PROOF BAR ── */
@@ -1324,6 +1330,7 @@ Virtual Course</h3>
   (function() {
     const container = document.getElementById('hero-paths');
     if (!container) return;
+    if (window.matchMedia('(max-width: 900px)').matches) return;
     const NS = 'http://www.w3.org/2000/svg';
 
     function buildPaths(position) {
