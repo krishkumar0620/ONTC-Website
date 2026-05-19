@@ -1276,6 +1276,21 @@ Virtual Course</h3>
   </div>
 </footer>
 
+<!-- ENQUIRY MODAL -->
+<div id="enquiry-modal" role="dialog" aria-modal="true" aria-label="Send an Enquiry" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem">
+  <div style="background:#fff;border-radius:16px;max-width:420px;width:100%;padding:2rem 2rem 1.75rem;box-shadow:0 8px 48px rgba(0,35,102,.25);position:relative">
+    <button id="enquiry-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.4rem;color:#666;line-height:1">&#x2715;</button>
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#72CBE8;text-transform:uppercase;margin-bottom:.5rem">Get in Touch</p>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;color:#002366;margin-bottom:.25rem">Send an Enquiry</h2>
+    <p style="font-size:.9rem;color:#555;margin-bottom:1.5rem">Email us directly and we'll get back to you as soon as possible.</p>
+    <div style="background:#f4f7fb;border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem">
+      <span id="enquiry-email" style="font-size:.9rem;color:#002366;font-weight:600;word-break:break-all">oscenursetraining@outlook.com</span>
+      <button id="enquiry-copy" style="background:#002366;color:#fff;border:none;border-radius:6px;padding:.45rem .9rem;font-size:.8rem;cursor:pointer;white-space:nowrap;flex-shrink:0">Copy</button>
+    </div>
+    <a href="mailto:oscenursetraining@outlook.com" class="btn-gold" style="display:block;text-align:center;text-decoration:none;font-size:.9rem;padding:.85rem 1.5rem">Open Email App →</a>
+  </div>
+</div>
+
 <!-- MOBILE STICKY BAR -->
 <div class="mob-bar" role="complementary" aria-label="Quick booking actions">
   <a href="#courses" class="btn-gold">Book a Course →</a>
@@ -1413,6 +1428,38 @@ Virtual Course</h3>
       iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
       el.innerHTML = '';
       el.appendChild(iframe);
+    });
+  });
+
+  // Enquiry modal
+  const enquiryModal = document.getElementById('enquiry-modal');
+  const enquiryClose = document.getElementById('enquiry-close');
+  const enquiryCopy = document.getElementById('enquiry-copy');
+
+  document.querySelectorAll('a[href="mailto:oscenursetraining@outlook.com"].btn-gold').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      enquiryModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  enquiryClose.addEventListener('click', () => {
+    enquiryModal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+
+  enquiryModal.addEventListener('click', e => {
+    if (e.target === enquiryModal) {
+      enquiryModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  enquiryCopy.addEventListener('click', () => {
+    navigator.clipboard.writeText('oscenursetraining@outlook.com').then(() => {
+      enquiryCopy.textContent = 'Copied!';
+      setTimeout(() => enquiryCopy.textContent = 'Copy', 2000);
     });
   });
 </script>
