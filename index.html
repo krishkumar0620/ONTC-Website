@@ -1261,7 +1261,7 @@ Virtual Course</h3>
         <ul class="f-links">
           <li><a href="tel:+447771808735">+44 (0) 7771 808 735</a></li>
           <li><a href="mailto:oscenursetraining@outlook.com">oscenursetraining@outlook.com</a></li>
-          <li><a href="#">Robinson Way, Cambridge</a></li>
+          <li><a href="#" id="maps-trigger">Robinson Way, Cambridge</a></li>
         </ul>
       </div>
     </div>
@@ -1290,6 +1290,20 @@ Virtual Course</h3>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="https://mail.google.com/mail/?view=cm&to=oscenursetraining@outlook.com&su=OSCE%20Enquiry" target="_blank" rel="noopener" style="flex:1;text-align:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem;border:2px solid #002366;color:#002366;border-radius:8px;font-weight:600">Open in Gmail</a>
       <a href="https://outlook.live.com/mail/0/deeplink/compose?to=oscenursetraining%40outlook.com&subject=OSCE%20Enquiry" target="_blank" rel="noopener" class="btn-gold" style="flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem">Open in Outlook</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAPS MODAL -->
+<div id="maps-modal" role="dialog" aria-modal="true" aria-label="Open in Maps" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem">
+  <div style="background:#fff;border-radius:16px;max-width:380px;width:100%;padding:2rem 2rem 1.75rem;box-shadow:0 8px 48px rgba(0,35,102,.25);position:relative">
+    <button id="maps-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.4rem;color:#666;line-height:1">&#x2715;</button>
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#72CBE8;text-transform:uppercase;margin-bottom:.5rem">Location</p>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;color:#002366;margin-bottom:.25rem">Get Directions</h2>
+    <p style="font-size:.9rem;color:#555;margin-bottom:1.5rem">Robinson Way, Cambridge CB2 0SZ</p>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+      <a href="https://www.google.com/maps/search/?api=1&query=Robinson+Way+Cambridge+CB2+0SZ" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem;border:2px solid #002366;color:#002366;border-radius:8px;font-weight:600">Google Maps</a>
+      <a href="https://maps.apple.com/?q=Robinson+Way,+Cambridge+CB2+0SZ" target="_blank" rel="noopener" class="btn-gold" style="flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem">Apple Maps</a>
     </div>
   </div>
 </div>
@@ -1456,6 +1470,25 @@ Virtual Course</h3>
   enquiryModal.addEventListener('click', e => {
     if (e.target === enquiryModal) {
       enquiryModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Maps modal
+  const mapsModal = document.getElementById('maps-modal');
+  const mapsClose = document.getElementById('maps-close');
+  document.getElementById('maps-trigger').addEventListener('click', e => {
+    e.preventDefault();
+    mapsModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+  mapsClose.addEventListener('click', () => {
+    mapsModal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+  mapsModal.addEventListener('click', e => {
+    if (e.target === mapsModal) {
+      mapsModal.style.display = 'none';
       document.body.style.overflow = '';
     }
   });
