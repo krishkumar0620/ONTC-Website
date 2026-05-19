@@ -1270,7 +1270,7 @@ Virtual Course</h3>
       <div class="f-legal">
         <a href="#" id="privacy-trigger">Privacy Policy</a>
         <a href="#">Terms of Use</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#" id="cookie-policy-trigger">Cookie Policy</a>
       </div>
     </div>
   </div>
@@ -1290,6 +1290,60 @@ Virtual Course</h3>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="https://mail.google.com/mail/?view=cm&to=oscenursetraining@outlook.com&su=OSCE%20Enquiry" target="_blank" rel="noopener" style="flex:1;text-align:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem;border:2px solid #002366;color:#002366;border-radius:8px;font-weight:600">Open in Gmail</a>
       <a href="https://outlook.live.com/mail/0/deeplink/compose?to=oscenursetraining%40outlook.com&subject=OSCE%20Enquiry" target="_blank" rel="noopener" class="btn-gold" style="flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem">Open in Outlook</a>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#002366;color:#fff;padding:1.25rem 1.5rem;box-shadow:0 -4px 24px rgba(0,0,0,.25)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+    <p style="flex:1;min-width:260px;font-size:.85rem;line-height:1.6;margin:0;color:rgba(255,255,255,.88)">We use cookies to provide website functionality, to analyze site usage, to enable social media features and assist in our marketing efforts. Only Necessary Cookies will be stored by default, and by clicking <strong style="color:#fff">"Allow All Cookies"</strong>, you agree to the storage of all cookies on your device. You may personalize your preferences, obtain more information, and withdraw or change your consent at any time by clicking on <strong style="color:#fff">"Cookie Preferences"</strong>.</p>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0">
+      <button id="cookie-preferences-btn" style="background:none;border:2px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:.6rem 1.1rem;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap">Cookie Preferences</button>
+      <button id="cookie-accept-btn" style="background:#72CBE8;border:none;color:#002366;border-radius:8px;padding:.6rem 1.25rem;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap">Allow All Cookies</button>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE PREFERENCES MODAL -->
+<div id="cookie-prefs-modal" role="dialog" aria-modal="true" aria-label="Cookie Preferences" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem">
+  <div style="background:#fff;border-radius:16px;max-width:480px;width:100%;box-shadow:0 8px 48px rgba(0,35,102,.25);position:relative;overflow:hidden">
+    <div style="padding:1.75rem 2rem 1.25rem;border-bottom:1px solid #eef0f5">
+      <button id="cookie-prefs-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.4rem;color:#666;line-height:1">&#x2715;</button>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#72CBE8;text-transform:uppercase;margin-bottom:.35rem">Cookies</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;color:#002366;margin:0">Cookie Preferences</h2>
+    </div>
+    <div style="padding:1.5rem 2rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid #eef0f5">
+        <div>
+          <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Necessary Cookies</p>
+          <p style="font-size:.8rem;color:#666;margin:0">Required for the website to function. Cannot be disabled.</p>
+        </div>
+        <span style="font-size:.75rem;font-weight:700;color:#72CBE8;background:#f0fbff;padding:.25rem .65rem;border-radius:20px;flex-shrink:0;margin-left:1rem">Always On</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid #eef0f5">
+        <div>
+          <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Analytics Cookies</p>
+          <p style="font-size:.8rem;color:#666;margin:0">Help us understand how visitors interact with our site.</p>
+        </div>
+        <label style="position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;margin-left:1rem">
+          <input type="checkbox" id="analytics-toggle" style="opacity:0;width:0;height:0">
+          <span id="analytics-slider" style="position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:24px;transition:.3s"></span>
+        </label>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0">
+        <div>
+          <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Marketing Cookies</p>
+          <p style="font-size:.8rem;color:#666;margin:0">Used to deliver relevant ads and track campaign performance.</p>
+        </div>
+        <label style="position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;margin-left:1rem">
+          <input type="checkbox" id="marketing-toggle" style="opacity:0;width:0;height:0">
+          <span id="marketing-slider" style="position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:24px;transition:.3s"></span>
+        </label>
+      </div>
+    </div>
+    <div style="padding:1.25rem 2rem 1.75rem;display:flex;gap:.75rem;justify-content:flex-end">
+      <button id="cookie-save-btn" style="background:#002366;border:none;color:#fff;border-radius:8px;padding:.7rem 1.5rem;font-size:.85rem;font-weight:700;cursor:pointer">Save Preferences</button>
     </div>
   </div>
 </div>
@@ -1508,6 +1562,93 @@ Virtual Course</h3>
       enquiryModal.style.display = 'none';
       document.body.style.overflow = '';
     }
+  });
+
+  // Cookie banner
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookiePrefsModal = document.getElementById('cookie-prefs-modal');
+  const analyticsToggle = document.getElementById('analytics-toggle');
+  const marketingToggle = document.getElementById('marketing-toggle');
+  const analyticsSlider = document.getElementById('analytics-slider');
+  const marketingSlider = document.getElementById('marketing-slider');
+
+  function updateSlider(slider, checked) {
+    slider.style.background = checked ? '#72CBE8' : '#ccc';
+    slider.style.setProperty('--x', checked ? '18px' : '2px');
+  }
+  function initSliders() {
+    [analyticsSlider, marketingSlider].forEach(s => {
+      s.style.cssText += ';transition:.3s';
+      const dot = document.createElement('span');
+      dot.style.cssText = 'position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s;display:block';
+      s.appendChild(dot);
+    });
+  }
+  function setSliderDot(slider, checked) {
+    const dot = slider.querySelector('span');
+    if (dot) dot.style.transform = checked ? 'translateX(18px)' : 'translateX(0)';
+    slider.style.background = checked ? '#72CBE8' : '#ccc';
+  }
+
+  initSliders();
+
+  analyticsToggle.addEventListener('change', () => setSliderDot(analyticsSlider, analyticsToggle.checked));
+  marketingToggle.addEventListener('change', () => setSliderDot(marketingSlider, marketingToggle.checked));
+  analyticsSlider.addEventListener('click', () => { analyticsToggle.checked = !analyticsToggle.checked; setSliderDot(analyticsSlider, analyticsToggle.checked); });
+  marketingSlider.addEventListener('click', () => { marketingToggle.checked = !marketingToggle.checked; setSliderDot(marketingSlider, marketingToggle.checked); });
+
+  function showCookieBanner() {
+    cookieBanner.style.display = 'block';
+  }
+  function hideCookieBanner() {
+    cookieBanner.style.display = 'none';
+  }
+
+  if (!localStorage.getItem('ontc_cookies')) showCookieBanner();
+
+  document.getElementById('cookie-accept-btn').addEventListener('click', () => {
+    localStorage.setItem('ontc_cookies', 'all');
+    hideCookieBanner();
+  });
+
+  document.getElementById('cookie-preferences-btn').addEventListener('click', () => {
+    const saved = JSON.parse(localStorage.getItem('ontc_cookies_prefs') || '{}');
+    analyticsToggle.checked = saved.analytics || false;
+    marketingToggle.checked = saved.marketing || false;
+    setSliderDot(analyticsSlider, analyticsToggle.checked);
+    setSliderDot(marketingSlider, marketingToggle.checked);
+    cookiePrefsModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+
+  document.getElementById('cookie-save-btn').addEventListener('click', () => {
+    localStorage.setItem('ontc_cookies', 'custom');
+    localStorage.setItem('ontc_cookies_prefs', JSON.stringify({ analytics: analyticsToggle.checked, marketing: marketingToggle.checked }));
+    cookiePrefsModal.style.display = 'none';
+    document.body.style.overflow = '';
+    hideCookieBanner();
+  });
+
+  document.getElementById('cookie-prefs-close').addEventListener('click', () => {
+    cookiePrefsModal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+  cookiePrefsModal.addEventListener('click', e => {
+    if (e.target === cookiePrefsModal) {
+      cookiePrefsModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.getElementById('cookie-policy-trigger').addEventListener('click', e => {
+    e.preventDefault();
+    const saved = JSON.parse(localStorage.getItem('ontc_cookies_prefs') || '{}');
+    analyticsToggle.checked = saved.analytics || false;
+    marketingToggle.checked = saved.marketing || false;
+    setSliderDot(analyticsSlider, analyticsToggle.checked);
+    setSliderDot(marketingSlider, marketingToggle.checked);
+    cookiePrefsModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   });
 
   // Privacy policy modal
