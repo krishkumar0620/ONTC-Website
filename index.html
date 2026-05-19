@@ -1437,6 +1437,7 @@ Virtual Course</h3>
   const enquiryCopy = document.getElementById('enquiry-copy');
 
   document.querySelectorAll('a[href="mailto:oscenursetraining@outlook.com"]').forEach(btn => {
+    if (btn.closest('#enquiry-modal')) return;
     btn.addEventListener('click', e => {
       e.preventDefault();
       enquiryModal.style.display = 'flex';
