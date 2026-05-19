@@ -1268,7 +1268,7 @@ Virtual Course</h3>
     <div class="footer-bottom">
       <p class="f-copy">© 2025 OSCE Nurse Training Cambridge. All rights reserved.</p>
       <div class="f-legal">
-        <a href="#">Privacy Policy</a>
+        <a href="#" id="privacy-trigger">Privacy Policy</a>
         <a href="#">Terms of Use</a>
         <a href="#">Cookie Policy</a>
       </div>
@@ -1290,6 +1290,42 @@ Virtual Course</h3>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="https://mail.google.com/mail/?view=cm&to=oscenursetraining@outlook.com&su=OSCE%20Enquiry" target="_blank" rel="noopener" style="flex:1;text-align:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem;border:2px solid #002366;color:#002366;border-radius:8px;font-weight:600">Open in Gmail</a>
       <a href="https://outlook.live.com/mail/0/deeplink/compose?to=oscenursetraining%40outlook.com&subject=OSCE%20Enquiry" target="_blank" rel="noopener" class="btn-gold" style="flex:1;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem">Open in Outlook</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div id="privacy-modal" role="dialog" aria-modal="true" aria-label="Privacy Policy" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem">
+  <div style="background:#fff;border-radius:16px;max-width:600px;width:100%;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 8px 48px rgba(0,35,102,.25);position:relative">
+    <div style="padding:2rem 2rem 1.25rem;border-bottom:1px solid #eef0f5;flex-shrink:0">
+      <button id="privacy-close" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.4rem;color:#666;line-height:1">&#x2715;</button>
+      <p style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#72CBE8;text-transform:uppercase;margin-bottom:.35rem">Legal</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;color:#002366;margin:0">Privacy Policy</h2>
+    </div>
+    <div style="padding:1.75rem 2rem;overflow-y:auto;font-size:.9rem;color:#444;line-height:1.8">
+      <h3 style="font-size:1rem;font-weight:700;color:#002366;margin-bottom:.5rem">Who is Responsible for Your Personal Data</h3>
+      <p style="margin-bottom:1rem">In this Privacy Notice, "OSCE Nurse Training Cambridge", "We", "Us" and "Our" refers to OSCE Nurse Training Cambridge. We determine the purposes and manner in which your personal data is collected, used and/or disclosed and managed in line with our internal privacy standards.</p>
+      <p style="margin-bottom:1rem">We take the privacy and security of your personal data very seriously. This Privacy Notice outlines the categories of personal data we may collect about you and how We may use it.</p>
+      <p style="margin-bottom:1.5rem">We may change this Privacy Notice from time to time. We will notify you of any changes where We are required to do so.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#002366;margin-bottom:.5rem">What Information Do We Collect and How Do We Use It?</h3>
+      <p style="margin-bottom:.75rem">If you register to use this website, complete an online form, or send Us an email then We may collect and use personal data about you such as:</p>
+      <ul style="margin:0 0 1rem 1.25rem;display:flex;flex-direction:column;gap:.25rem">
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Country of residence</li>
+        <li>Address</li>
+        <li>Telephone number</li>
+        <li>Occupation (for example, if you are a Healthcare Professional seeking information about our products)</li>
+        <li>Other personal data you choose to provide to Us</li>
+      </ul>
+      <p style="margin-bottom:1.5rem">Such information provided by you to Us is used by Us in our legitimate interests to administer the website, register you for any services you have signed up to and respond to any queries or requests for information you may have.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#002366;margin-bottom:.5rem">How We Protect Your Information</h3>
+      <p style="margin-bottom:1.5rem">We have in place appropriate privacy and security policies which are intended to ensure, as far as reasonably possible, the security and integrity of all Our information, including your personal data.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;color:#002366;margin-bottom:.5rem">What are Your Rights</h3>
+      <p>You may contact Us at any time to request information on how We process your personal data, access to the personal data We hold about you, to correct any mistakes or to request deletion of the same or withdraw your consent to certain types of processing of your personal data. If such a request places OSCE Nurse Training Cambridge in breach of its obligations under applicable laws, regulations or codes of practice, then We may not be able to comply with your request.</p>
     </div>
   </div>
 </div>
@@ -1470,6 +1506,25 @@ Virtual Course</h3>
   enquiryModal.addEventListener('click', e => {
     if (e.target === enquiryModal) {
       enquiryModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Privacy policy modal
+  const privacyModal = document.getElementById('privacy-modal');
+  const privacyClose = document.getElementById('privacy-close');
+  document.getElementById('privacy-trigger').addEventListener('click', e => {
+    e.preventDefault();
+    privacyModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+  privacyClose.addEventListener('click', () => {
+    privacyModal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+  privacyModal.addEventListener('click', e => {
+    if (e.target === privacyModal) {
+      privacyModal.style.display = 'none';
       document.body.style.overflow = '';
     }
   });
