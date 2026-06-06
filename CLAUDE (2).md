@@ -2,6 +2,10 @@
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Invoke the `ui-ux-pro-max` skill** before writing any frontend code, every session, no exceptions.
+- **Invoke the `web-design-guidelines` skill** when reviewing or auditing UI — checks accessibility, UX patterns, and design best practices.
+- **Use the `@21st-dev/magic` MCP server** when building UI components — use `21st_magic_component_builder` to generate components, `21st_magic_component_inspiration` to explore design options, and `21st_magic_component_refiner` to polish existing components.
+- **Use the `shadcn` MCP server** when building with shadcn/ui — use it to look up components, get installation commands, and reference variants before writing any shadcn-based code.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
@@ -15,7 +19,7 @@
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
+- Puppeteer is installed at `C:/Users/Krish/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users.cache/puppeteer/`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
@@ -23,6 +27,7 @@
 - After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
+- **For interactive testing** (clicking buttons, filling forms, navigating between pages, QA/bug hunts): use the `agent-browser` skill instead of `screenshot.mjs`.
 
 ## Output Defaults
 - Single `index.html` file, all styles inline, unless user says otherwise
@@ -45,6 +50,10 @@
 - **Images:** Add a gradient overlay (`bg-gradient-to-t from-black/60`) and a color treatment layer with `mix-blend-multiply`.
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
+
+## Quality Audit
+- **Before marking any site complete**, invoke the `web-quality-audit` skill — covers performance, accessibility, SEO, and best practices (Lighthouse-style).
+- Run it on every new site build, especially before client delivery.
 
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
