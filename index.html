@@ -95,8 +95,9 @@
       transition: background .35s ease, box-shadow .35s ease;
     }
     #nav.scrolled {
-      background: rgba(0,35,102,.96);
-      backdrop-filter: blur(14px);
+      /* 96%-opaque navy already hides any blur, so we drop the costly
+         backdrop-filter that caused per-frame re-blur during scroll */
+      background: rgba(0,35,102,.97);
       box-shadow: 0 2px 28px rgba(0,35,102,.35);
     }
     .nav-logo {
@@ -148,6 +149,11 @@
       position: absolute; inset: 0;
       pointer-events: none; overflow: hidden;
       color: rgba(255,255,255,0.18); z-index: 1;
+      /* Isolate onto its own compositor layer so page scroll = cheap composite,
+         decoupled from the lines' per-frame paint */
+      contain: layout paint;
+      transform: translateZ(0);
+      will-change: transform;
     }
     #hero-paths svg { width: 100%; height: 100%; }
     /* Line animation driven entirely by CSS (off the main thread) */
@@ -1590,7 +1596,9 @@ Virtual Course</h3>
     const NS = 'http://www.w3.org/2000/svg';
 
     function buildPaths(position) {
-      return Array.from({length: 36}, function(_, i) {
+      var COUNT = 20; // fewer lines = less paint; index remapped below to keep the same look
+      return Array.from({length: COUNT}, function(_, k) {
+        var i = k * (35 / (COUNT - 1)); // preserve the original 0..35 spread/fade/width envelope
         return {
           d: 'M-'+(380-i*5*position)+' -'+(189+i*6)+
              'C-'+(380-i*5*position)+' -'+(189+i*6)+
@@ -1640,13 +1648,25 @@ Virtual Course</h3>
       });
     });
 
-    // Pause the animation entirely while the hero is scrolled out of view.
+    // Pause the lines while actively scrolling OR while the hero is off-screen.
+    // Freezing these subtle lines during the scroll keeps the compositor free,
+    // so scrolling stays smooth; they resume the moment scrolling stops.
     var hero = document.querySelector('.hero');
+    var heroVisible = true, scrolling = false, scrollTimer;
+    function refreshPaused() {
+      container.classList.toggle('paused', scrolling || !heroVisible);
+    }
     if (hero && 'IntersectionObserver' in window) {
       new IntersectionObserver(function(entries) {
-        container.classList.toggle('paused', !entries[0].isIntersecting);
+        heroVisible = entries[0].isIntersecting;
+        refreshPaused();
       }, { threshold: 0 }).observe(hero);
     }
+    addEventListener('scroll', function() {
+      if (!scrolling) { scrolling = true; refreshPaused(); }
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function() { scrolling = false; refreshPaused(); }, 160);
+    }, { passive: true });
   })();
 
   // Click-to-play YouTube facades
