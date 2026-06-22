@@ -316,7 +316,13 @@
          page margins instead of overflowing off the right edge */
       .hero-inner > div { min-width: 0; }
       .hero-h1 { overflow-wrap: break-word; }
-      .hero-card { display: block; max-width: 480px; margin: 0 auto; backdrop-filter: none; background: rgba(0,35,102,.7); }
+      /* width:100% makes the card fill the column instead of sizing to its
+         (too-wide) content; the internals are scaled down so they fit a phone */
+      .hero-card { display: block; width: 100%; max-width: 480px; margin: 0 auto; padding: 1.35rem; backdrop-filter: none; background: rgba(0,35,102,.7); }
+      .hero-card img { width: 80px !important; height: 80px !important; margin: 4px 0 0 0 !important; }
+      .hero-card-big { font-size: 3.25rem; }
+      .hero-card-label { font-size: .68rem; }
+      .hero-stat-val { font-size: 1.3rem; }
       #planes-layer { display: none; }
       #hero-paths { display: none; }
       /* Remove expensive paint layers on mobile */
