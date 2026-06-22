@@ -86,12 +86,17 @@
     .d2 { transition-delay: .20s; }
     .d3 { transition-delay: .30s; }
     .d4 { transition-delay: .40s; }
-    /* Mobile: snappy reveals — quick opacity fade, no slide, no stagger,
-       so content appears immediately instead of animating in slowly */
+    /* Mobile: lightweight reveals — only transform + opacity (both run on the
+       GPU compositor, off the main thread, so no scroll jank). Small slide,
+       short duration and a light stagger so content rises in gently without
+       feeling slow. */
     @media (max-width: 768px) {
-      .rev { transform: none; transition: opacity .28s ease; }
+      .rev { transform: translateY(16px); transition: opacity .4s ease, transform .4s cubic-bezier(.22,1,.36,1); }
       .rev.vis { transform: none; }
-      .d1, .d2, .d3, .d4 { transition-delay: 0s; }
+      .d1 { transition-delay: .05s; }
+      .d2 { transition-delay: .10s; }
+      .d3 { transition-delay: .15s; }
+      .d4 { transition-delay: .20s; }
     }
 
     /* Skip rendering off-screen sections until they're scrolled near
@@ -334,8 +339,8 @@
       body::after { display: none; }
       /* Simplify multi-layer gradient to a single linear gradient */
       .hero-glow { background: linear-gradient(160deg, #002366 0%, #003087 100%); }
-      /* Disable CSS animations */
-      .hero-eyebrow .pulse { animation: none; }
+      /* Keep the tiny pulse dot (opacity/transform only — GPU-composited,
+         negligible cost); only the heavier scroll-hint bob is disabled. */
       .hero-scroll-hint { animation: none; }
     }
 
