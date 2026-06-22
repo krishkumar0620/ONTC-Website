@@ -312,6 +312,10 @@
     @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      /* Let the text column shrink to the viewport so it wraps within the
+         page margins instead of overflowing off the right edge */
+      .hero-inner > div { min-width: 0; }
+      .hero-h1 { overflow-wrap: break-word; }
       .hero-card { display: block; max-width: 480px; margin: 0 auto; backdrop-filter: none; background: rgba(0,35,102,.7); }
       #planes-layer { display: none; }
       #hero-paths { display: none; }
