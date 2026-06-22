@@ -150,6 +150,20 @@
       color: rgba(255,255,255,0.18); z-index: 1;
     }
     #hero-paths svg { width: 100%; height: 100%; }
+    /* Line animation driven entirely by CSS (off the main thread) */
+    .hero-path {
+      animation-name: hero-flow, hero-pulse;
+      animation-duration: var(--dur, 24s), var(--dur, 24s);
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+      animation-delay: var(--delay, 0s), var(--delay, 0s);
+    }
+    @keyframes hero-flow { to { stroke-dashoffset: var(--off, -1950); } }
+    @keyframes hero-pulse {
+      0%, 100% { stroke-opacity: calc(var(--base, .5) * .4); }
+      50%      { stroke-opacity: var(--base, .5); }
+    }
+    #hero-paths.paused .hero-path { animation-play-state: paused; }
     .hero-bg {
       position: absolute; inset: 0;
       background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
@@ -1596,42 +1610,43 @@ Virtual Course</h3>
     svg.setAttribute('fill', 'none');
     svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
 
-    var pathData = [];
+    var paths = [];
     [1, -1].forEach(function(pos) {
       buildPaths(pos).forEach(function(p) {
         var el = document.createElementNS(NS, 'path');
         el.setAttribute('d', p.d);
         el.setAttribute('stroke', 'currentColor');
         el.setAttribute('stroke-width', String(p.width));
+        el.classList.add('hero-path');
         svg.appendChild(el);
-        pathData.push({ el: el, baseOpacity: p.baseOpacity });
+        paths.push({ el: el, baseOpacity: p.baseOpacity });
       });
     });
 
     container.appendChild(svg);
 
+    // Measure each path once, then hand the loop off to CSS — no per-frame JS,
+    // so the main thread stays free for smooth scrolling.
     requestAnimationFrame(function() {
-      var animated = pathData.map(function(p) {
+      paths.forEach(function(p) {
         var len = 1500;
-        try { len = p.el.getTotalLength() || 1500; } catch(e) {}
-        var dur = (20 + Math.random() * 10) * 1000;
-        var start = performance.now() - Math.random() * dur;
-        return { el: p.el, baseOpacity: p.baseOpacity, len: len, dur: dur, start: start };
+        try { len = p.el.getTotalLength() || 1500; } catch (e) {}
+        var dur = 20 + Math.random() * 10; // seconds
+        p.el.setAttribute('stroke-dasharray', (len * 0.3) + ' ' + len);
+        p.el.style.setProperty('--off', String(-(len * 1.3)));
+        p.el.style.setProperty('--base', String(p.baseOpacity));
+        p.el.style.setProperty('--dur', dur + 's');
+        p.el.style.setProperty('--delay', (-Math.random() * dur) + 's');
       });
-
-      function frame(now) {
-        animated.forEach(function(p) {
-          var t = ((now - p.start) % p.dur) / p.dur;
-          var dash = p.len * 0.3;
-          p.el.setAttribute('stroke-dasharray', dash + ' ' + p.len);
-          p.el.setAttribute('stroke-dashoffset', String(-(t * p.len * 1.3)));
-          var op = p.baseOpacity * (0.4 + 0.6 * Math.abs(Math.sin(t * Math.PI)));
-          p.el.setAttribute('stroke-opacity', String(op));
-        });
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
     });
+
+    // Pause the animation entirely while the hero is scrolled out of view.
+    var hero = document.querySelector('.hero');
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries) {
+        container.classList.toggle('paused', !entries[0].isIntersecting);
+      }, { threshold: 0 }).observe(hero);
+    }
   })();
 
   // Click-to-play YouTube facades
