@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://ontc-website.vercel.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy:        #003087;
@@ -59,6 +59,20 @@
     }
     /* Typography */
     h1,h2,h3,.serif { font-family: 'Fraunces', serif; }
+    /* <picture> is a transparent wrapper so WebP fallbacks don't affect layout */
+    picture { display: contents; }
+
+    /* Skip link — hidden until keyboard focus (WCAG 2.4.1 Bypass Blocks) */
+    .skip-link {
+      position: fixed; top: -100px; left: 1rem; z-index: 1000;
+      background: var(--navy); color: #fff;
+      padding: .65rem 1.15rem; border-radius: 0 0 8px 8px;
+      font-size: .875rem; font-weight: 500; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,35,102,.35);
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 0; outline: 2px solid var(--gold); outline-offset: 2px; }
+    #main-content { scroll-margin-top: 72px; }
 
     /* ── Scroll reveal ── */
     .rev {
@@ -303,6 +317,7 @@
     /* ── HOW IT WORKS ── */
     .hiw {
       background: linear-gradient(rgba(0,48,135,0.60), rgba(0,48,135,0.60)), url('hiw-nurses.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,48,135,0.60), rgba(0,48,135,0.60)), image-set(url('hiw-nurses.webp') type('image/webp'), url('hiw-nurses.jpg') type('image/jpeg')) center/cover no-repeat;
       padding: 6rem 2.5rem;
       border-top: 3px solid #ffffff;
     }
@@ -671,6 +686,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- NAV -->
 <nav id="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="OSCE Nurse Training Cambridge">
@@ -689,7 +706,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" aria-labelledby="hero-h1">
+<section class="hero" id="main-content" aria-labelledby="hero-h1">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div id="hero-paths" aria-hidden="true"></div>
@@ -737,7 +754,10 @@
           <div class="hero-card-stars" aria-label="Five stars">★★★★★</div>
           <div class="hero-card-review-count">5 Star Rating</div>
         </div>
-        <img src="Brand Assets/ontc-logo.jpg" alt="ONTC Cambridge" width="336" height="336" style="height:145px;width:145px;object-fit:cover;border-radius:50%;opacity:.95;flex-shrink:0;margin-right:12px;margin-top:18px;">
+        <picture>
+          <source srcset="Brand%20Assets/ontc-logo.webp" type="image/webp">
+          <img src="Brand Assets/ontc-logo.jpg" alt="ONTC Cambridge" width="336" height="336" style="height:145px;width:145px;object-fit:cover;border-radius:50%;opacity:.95;flex-shrink:0;margin-right:12px;margin-top:18px;">
+        </picture>
       </div>
       <div class="hero-card-divider" aria-hidden="true"></div>
       <div class="hero-stat-row">
@@ -1075,7 +1095,10 @@ Virtual Course</h3>
 <section class="about-sec" id="about" aria-labelledby="about-title">
   <div class="about-inner">
     <div class="about-img-wrap rev">
-      <img src="Brand Assets/shalu.jpeg" alt="Shalu Kumar — OSCE Nurse Trainer, Cambridge" class="about-img" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="Brand%20Assets/shalu.webp" type="image/webp">
+        <img src="Brand Assets/shalu.jpeg" alt="Shalu Kumar — OSCE Nurse Trainer, Cambridge" class="about-img" loading="lazy" decoding="async">
+      </picture>
       <div class="about-float" aria-hidden="true">
         <div class="float-big">20 Years</div>
         <div class="float-lbl">Nursing Experience</div>
@@ -1846,6 +1869,71 @@ Virtual Course</h3>
     "ratingValue": "5.0",
     "reviewCount": "150"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the OSCE exam and why do I need training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The OSCE (Objective Structured Clinical Examination) is a mandatory skills assessment for overseas nurses registering with the NMC to work in the UK. It tests clinical competencies across multiple stations. Specialist training dramatically increases your pass rate — our students achieve 95%+ success on their first attempt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does OSCE training take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Training duration depends on your chosen course, time required for revision keeping in mind your personal and work commitments. We would generally recommend a period of 10 weeks from start of training to taking your OSCE exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I train online, or do I need to come to Cambridge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer both options. The Virtual course is fully online and includes an online mock exam. Our blended course starts with online lessons to cover the theory part and then you attend 5 practice days to do hands-on practise using real clinical equipment in exam-simulated conditions. Tailored 1:1 training can be done virtually or in-person as per your needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I'm from overseas — can you help regardless of my country?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We have successfully trained nurses from the UAE, Nigeria, Ghana, India, Philippines, Nepal, Romania, Kenya, Pakistan, US, New Zealand, Australia, Sri Lanka, Hong Kong and many more. The OSCE is the same for all internationally educated nurses applying to register with the NMC, and our training is designed specifically for this audience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't pass my OSCE first time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are hugely proud of our above 95% pass rate at first attempt which means most of our nurses pass first time. In the rare event that a nurse needs to resit, we work closely with them to identify what went wrong and prepare specifically for the resit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What equipment is used during training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Practical sessions use real clinical equipment to help nurses prepare for real OSCE exam conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide study materials and mock exams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — our courses include comprehensive OSCE study materials, revision resources and full mock exam practice with feedback to help build confidence before the exam."
+      }
+    }
+  ]
 }
 </script>
 </body>
