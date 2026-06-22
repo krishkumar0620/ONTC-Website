@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#002366">
   <title>OSCE Nurse Training Cambridge | 150+ ★★★★★ Reviews | 95%+ Pass Rate</title>
   <meta name="description" content="Personalised OSCE training for international nurses in Cambridge. 150+ five-star Google reviews. 95%+ pass rate. Book your course today.">
   <meta name="robots" content="index, follow">
@@ -36,7 +37,7 @@
       --sh-gold:     0 4px 20px rgba(65,182,230,.28), 0 8px 40px rgba(65,182,230,.14);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; color-scheme: light; }
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -45,6 +46,8 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(0,48,135,.15);
     }
     /* Grain overlay */
     body::after {
@@ -107,11 +110,11 @@
     }
     .nav-book:hover { background: var(--gold-light) !important; transform: translateY(-2px) !important; box-shadow: 0 8px 32px rgba(65,182,230,.4) !important; }
     .nav-book:active { transform: none !important; }
-    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-burger { display: none; flex-direction: column; align-items: center; justify-content: center; width: 44px; height: 44px; background: none; border: none; cursor: pointer; padding: 0; }
     .nav-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; margin: 4px 0; transition: transform .3s ease, opacity .3s ease; }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .nav-burger { display: block; }
+      .nav-burger { display: flex; }
       #nav {
         background: rgba(0,35,102,.96);
         box-shadow: 0 2px 28px rgba(0,35,102,.35);
@@ -649,6 +652,21 @@
       .proof-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
       .proof-item:last-child { grid-column: 1 / -1; justify-content: center; border-bottom: none; }
     }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+      html { scroll-behavior: auto; }
+      /* Ensure scroll-reveal content is always visible without motion */
+      .rev { opacity: 1 !important; transform: none !important; }
+      /* Neutralise decorative looping motion */
+      .hero-eyebrow .pulse, .hero-scroll-hint { animation: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -656,7 +674,7 @@
 <!-- NAV -->
 <nav id="nav" aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="OSCE Nurse Training Cambridge">
-    <img src="Brand Assets/ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge">
+    <img src="Brand Assets/ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge" width="1536" height="1024">
   </a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#courses">Courses</a></li>
@@ -719,7 +737,7 @@
           <div class="hero-card-stars" aria-label="Five stars">★★★★★</div>
           <div class="hero-card-review-count">5 Star Rating</div>
         </div>
-        <img src="Brand Assets/ontc-logo.jpg" alt="ONTC Cambridge" style="height:145px;width:145px;object-fit:cover;border-radius:50%;opacity:.95;flex-shrink:0;margin-right:12px;margin-top:18px;">
+        <img src="Brand Assets/ontc-logo.jpg" alt="ONTC Cambridge" width="336" height="336" style="height:145px;width:145px;object-fit:cover;border-radius:50%;opacity:.95;flex-shrink:0;margin-right:12px;margin-top:18px;">
       </div>
       <div class="hero-card-divider" aria-hidden="true"></div>
       <div class="hero-stat-row">
@@ -917,7 +935,7 @@ Virtual Course</h3>
     <div class="videos-grid">
       <div class="vid-card rev">
         <div class="vid-thumb">
-          <img src="https://placehold.co/640x360/0D1A2A/1A3040" alt="Sobulo's OSCE success story">
+          <img src="https://placehold.co/640x360/0D1A2A/1A3040" alt="Sobulo's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" aria-label="Play video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -937,7 +955,7 @@ Virtual Course</h3>
       </div>
       <div class="vid-card rev d2">
         <div class="vid-thumb">
-          <img src="https://placehold.co/640x360/0A1F18/12362A" alt="Megan's OSCE success story">
+          <img src="https://placehold.co/640x360/0A1F18/12362A" alt="Megan's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" style="background:var(--gold)" aria-label="Play video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -957,7 +975,7 @@ Virtual Course</h3>
       </div>
       <div class="vid-card rev d3">
         <div class="vid-thumb">
-          <img src="https://placehold.co/640x360/1A0D2A/2A1840" alt="Akshay's OSCE success story">
+          <img src="https://placehold.co/640x360/1A0D2A/2A1840" alt="Akshay's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" style="background:var(--teal)" aria-label="Play video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -1057,7 +1075,7 @@ Virtual Course</h3>
 <section class="about-sec" id="about" aria-labelledby="about-title">
   <div class="about-inner">
     <div class="about-img-wrap rev">
-      <img src="Brand Assets/shalu.jpeg" alt="Shalu Kumar — OSCE Nurse Trainer, Cambridge" class="about-img">
+      <img src="Brand Assets/shalu.jpeg" alt="Shalu Kumar — OSCE Nurse Trainer, Cambridge" class="about-img" loading="lazy" decoding="async">
       <div class="about-float" aria-hidden="true">
         <div class="float-big">20 Years</div>
         <div class="float-lbl">Nursing Experience</div>
@@ -1251,7 +1269,7 @@ Virtual Course</h3>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="/" class="f-logo"><img src="Brand Assets/ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge"></a>
+        <a href="/" class="f-logo"><img src="Brand Assets/ontc-logo-transparent.png" alt="ONTC — OSCE Nurse Training Cambridge" width="1536" height="1024" loading="lazy" decoding="async"></a>
         <p class="f-tagline">Helping international nurses pass their OSCE and build their career in the UK. Cambridge-based, globally trusted.</p>
         <div class="f-socials">
           <a href="https://facebook.com/OSCEnursetraining/" class="f-social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -1311,7 +1329,7 @@ Virtual Course</h3>
     <p style="font-size:.9rem;color:#555;margin-bottom:1.5rem">Email us directly and we'll get back to you as soon as possible.</p>
     <div style="background:#f4f7fb;border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem">
       <span id="enquiry-email" style="font-size:.9rem;color:#002366;font-weight:600;word-break:break-all">oscenursetraining@outlook.com</span>
-      <button id="enquiry-copy" style="background:#002366;color:#fff;border:none;border-radius:6px;padding:.45rem .9rem;font-size:.8rem;cursor:pointer;white-space:nowrap;flex-shrink:0">Copy</button>
+      <button id="enquiry-copy" aria-live="polite" style="background:#002366;color:#fff;border:none;border-radius:6px;padding:.45rem .9rem;font-size:.8rem;cursor:pointer;white-space:nowrap;flex-shrink:0">Copy</button>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="https://mail.google.com/mail/?view=cm&to=oscenursetraining@outlook.com&su=OSCE%20Enquiry" target="_blank" rel="noopener noreferrer" style="flex:1;text-align:center;text-decoration:none;font-size:.85rem;padding:.8rem 1rem;border:2px solid #002366;color:#002366;border-radius:8px;font-weight:600">Open in Gmail</a>
@@ -1531,6 +1549,7 @@ Virtual Course</h3>
     const container = document.getElementById('hero-paths');
     if (!container) return;
     if (window.matchMedia('(max-width: 900px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const NS = 'http://www.w3.org/2000/svg';
 
     function buildPaths(position) {
@@ -1598,8 +1617,11 @@ Virtual Course</h3>
       const id = el.dataset.vid;
       if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      // Privacy-enhanced domain works without third-party cookies (avoids YouTube Error 153)
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+      iframe.title = el.querySelector('img')?.alt || 'YouTube video';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
       iframe.allowFullscreen = true;
       iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
       el.innerHTML = '';
@@ -1782,6 +1804,25 @@ Virtual Course</h3>
       enquiryCopy.textContent = 'Copied!';
       setTimeout(() => enquiryCopy.textContent = 'Copy', 2000);
     });
+  });
+
+  // Close any open modal / mobile nav with the Escape key (keyboard accessibility)
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    let closedSomething = false;
+    document.querySelectorAll('[role="dialog"]').forEach(modal => {
+      if (getComputedStyle(modal).display !== 'none') {
+        modal.style.display = 'none';
+        closedSomething = true;
+      }
+    });
+    if (navOpen) {
+      navOpen = false;
+      burger.setAttribute('aria-expanded', 'false');
+      links.style.display = '';
+      closedSomething = true;
+    }
+    if (closedSomething) document.body.style.overflow = '';
   });
 </script>
 
