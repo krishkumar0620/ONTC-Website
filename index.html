@@ -1706,43 +1706,60 @@ Virtual Course</h3>
   });
 
   // Enquiry modal
-  const enquiryModal = document.getElementById('enquiry-modal');
-  const enquiryClose = document.getElementById('enquiry-close');
-  const enquiryCopy = document.getElementById('enquiry-copy');
+  // ── Shared modal helper ──
+  // Handles open/close, backdrop-click, and accessibility focus management:
+  // moves focus into the dialog on open, traps Tab inside it, and restores
+  // focus to the triggering element on close. Used by every dialog below.
+  const openModals = [];
+  function setupModal(modalId, closeId, onOpen) {
+    const modal = document.getElementById(modalId);
+    const closeBtn = closeId ? document.getElementById(closeId) : null;
+    let opener = null;
+    const focusable = () => modal.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    function open() {
+      opener = document.activeElement;
+      if (onOpen) onOpen();
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      const f = focusable();
+      (f[0] || modal).focus();
+    }
+    function close() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (opener && typeof opener.focus === 'function') opener.focus();
+    }
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    modal.addEventListener('keydown', e => {
+      if (e.key !== 'Tab') return;
+      const f = focusable();
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+    const api = { modal, open, close };
+    openModals.push(api);
+    return api;
+  }
 
+  // Enquiry modal — opened from any mailto link outside the modal itself
+  const enquiryCopy = document.getElementById('enquiry-copy');
+  const enquiry = setupModal('enquiry-modal', 'enquiry-close');
   document.querySelectorAll('a[href="mailto:oscenursetraining@outlook.com"]').forEach(btn => {
     if (btn.closest('#enquiry-modal')) return;
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      enquiryModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  enquiryClose.addEventListener('click', () => {
-    enquiryModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-
-  enquiryModal.addEventListener('click', e => {
-    if (e.target === enquiryModal) {
-      enquiryModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
+    btn.addEventListener('click', e => { e.preventDefault(); enquiry.open(); });
   });
 
   // Cookie banner
   const cookieBanner = document.getElementById('cookie-banner');
-  const cookiePrefsModal = document.getElementById('cookie-prefs-modal');
   const analyticsToggle = document.getElementById('analytics-toggle');
   const marketingToggle = document.getElementById('marketing-toggle');
   const analyticsSlider = document.getElementById('analytics-slider');
   const marketingSlider = document.getElementById('marketing-slider');
 
-  function updateSlider(slider, checked) {
-    slider.style.background = checked ? '#72CBE8' : '#ccc';
-    slider.style.setProperty('--x', checked ? '18px' : '2px');
-  }
   function initSliders() {
     [analyticsSlider, marketingSlider].forEach(s => {
       s.style.cssText += ';transition:.3s';
@@ -1778,127 +1795,61 @@ Virtual Course</h3>
     hideCookieBanner();
   });
 
-  document.getElementById('cookie-preferences-btn').addEventListener('click', () => {
+  // Load the saved preferences into the toggles whenever the modal opens
+  function loadPrefsIntoToggles() {
     const saved = JSON.parse(localStorage.getItem('ontc_cookies_prefs') || '{}');
     analyticsToggle.checked = saved.analytics || false;
     marketingToggle.checked = saved.marketing || false;
     setSliderDot(analyticsSlider, analyticsToggle.checked);
     setSliderDot(marketingSlider, marketingToggle.checked);
-    cookiePrefsModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
+  }
+  const cookiePrefs = setupModal('cookie-prefs-modal', 'cookie-prefs-close', loadPrefsIntoToggles);
+
+  document.getElementById('cookie-preferences-btn').addEventListener('click', () => cookiePrefs.open());
 
   document.getElementById('cookie-save-btn').addEventListener('click', () => {
     localStorage.setItem('ontc_cookies', 'custom');
     localStorage.setItem('ontc_cookies_prefs', JSON.stringify({ analytics: analyticsToggle.checked, marketing: marketingToggle.checked }));
-    cookiePrefsModal.style.display = 'none';
-    document.body.style.overflow = '';
+    cookiePrefs.close();
     hideCookieBanner();
-  });
-
-  document.getElementById('cookie-prefs-close').addEventListener('click', () => {
-    cookiePrefsModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  cookiePrefsModal.addEventListener('click', e => {
-    if (e.target === cookiePrefsModal) {
-      cookiePrefsModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
   });
 
   document.getElementById('cookie-policy-trigger').addEventListener('click', e => {
     e.preventDefault();
-    const saved = JSON.parse(localStorage.getItem('ontc_cookies_prefs') || '{}');
-    analyticsToggle.checked = saved.analytics || false;
-    marketingToggle.checked = saved.marketing || false;
-    setSliderDot(analyticsSlider, analyticsToggle.checked);
-    setSliderDot(marketingSlider, marketingToggle.checked);
-    cookiePrefsModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    cookiePrefs.open();
   });
 
-  // Terms of use modal
-  const termsModal = document.getElementById('terms-modal');
-  const termsClose = document.getElementById('terms-close');
-  document.getElementById('terms-trigger').addEventListener('click', e => {
-    e.preventDefault();
-    termsModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-  termsClose.addEventListener('click', () => {
-    termsModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  termsModal.addEventListener('click', e => {
-    if (e.target === termsModal) {
-      termsModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Privacy policy modal
-  const privacyModal = document.getElementById('privacy-modal');
-  const privacyClose = document.getElementById('privacy-close');
-  document.getElementById('privacy-trigger').addEventListener('click', e => {
-    e.preventDefault();
-    privacyModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-  privacyClose.addEventListener('click', () => {
-    privacyModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  privacyModal.addEventListener('click', e => {
-    if (e.target === privacyModal) {
-      privacyModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Maps modal
-  const mapsModal = document.getElementById('maps-modal');
-  const mapsClose = document.getElementById('maps-close');
-  document.getElementById('maps-trigger').addEventListener('click', e => {
-    e.preventDefault();
-    mapsModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-  mapsClose.addEventListener('click', () => {
-    mapsModal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-  mapsModal.addEventListener('click', e => {
-    if (e.target === mapsModal) {
-      mapsModal.style.display = 'none';
-      document.body.style.overflow = '';
-    }
+  // Simple trigger → dialog modals (terms, privacy, maps)
+  [
+    ['terms-trigger',   'terms-modal',   'terms-close'],
+    ['privacy-trigger', 'privacy-modal', 'privacy-close'],
+    ['maps-trigger',    'maps-modal',    'maps-close'],
+  ].forEach(([triggerId, modalId, closeId]) => {
+    const m = setupModal(modalId, closeId);
+    document.getElementById(triggerId).addEventListener('click', e => { e.preventDefault(); m.open(); });
   });
 
   enquiryCopy.addEventListener('click', () => {
-    navigator.clipboard.writeText('oscenursetraining@outlook.com').then(() => {
-      enquiryCopy.textContent = 'Copied!';
-      setTimeout(() => enquiryCopy.textContent = 'Copy', 2000);
-    });
+    const email = 'oscenursetraining@outlook.com';
+    const flash = msg => { enquiryCopy.textContent = msg; setTimeout(() => enquiryCopy.textContent = 'Copy', 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(() => flash('Copied!')).catch(() => flash('Copy failed'));
+    } else {
+      flash('Copy failed');
+    }
   });
 
   // Close any open modal / mobile nav with the Escape key (keyboard accessibility)
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
-    let closedSomething = false;
-    document.querySelectorAll('[role="dialog"]').forEach(modal => {
-      if (getComputedStyle(modal).display !== 'none') {
-        modal.style.display = 'none';
-        closedSomething = true;
-      }
-    });
+    // close() restores focus to the trigger and resets body overflow
+    openModals.forEach(m => { if (getComputedStyle(m.modal).display !== 'none') m.close(); });
     if (navOpen) {
       navOpen = false;
       burger.setAttribute('aria-expanded', 'false');
       links.style.display = '';
-      closedSomething = true;
+      document.body.style.overflow = '';
     }
-    if (closedSomething) document.body.style.overflow = '';
   });
 </script>
 
