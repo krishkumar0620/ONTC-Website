@@ -1648,25 +1648,13 @@ Virtual Course</h3>
       });
     });
 
-    // Pause the lines while actively scrolling OR while the hero is off-screen.
-    // Freezing these subtle lines during the scroll keeps the compositor free,
-    // so scrolling stays smooth; they resume the moment scrolling stops.
+    // Pause the animation only while the hero is scrolled out of view.
     var hero = document.querySelector('.hero');
-    var heroVisible = true, scrolling = false, scrollTimer;
-    function refreshPaused() {
-      container.classList.toggle('paused', scrolling || !heroVisible);
-    }
     if (hero && 'IntersectionObserver' in window) {
       new IntersectionObserver(function(entries) {
-        heroVisible = entries[0].isIntersecting;
-        refreshPaused();
+        container.classList.toggle('paused', !entries[0].isIntersecting);
       }, { threshold: 0 }).observe(hero);
     }
-    addEventListener('scroll', function() {
-      if (!scrolling) { scrolling = true; refreshPaused(); }
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function() { scrolling = false; refreshPaused(); }, 160);
-    }, { passive: true });
   })();
 
   // Click-to-play YouTube facades
