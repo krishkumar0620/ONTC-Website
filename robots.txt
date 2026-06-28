@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ontc-website.vercel.app/sitemap.xml
+Sitemap: https://oscenursetraining.com/sitemap.xml
