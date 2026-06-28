@@ -113,12 +113,11 @@
       height: 72px;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 2.5rem;
+      background: var(--navy);
       transition: background .35s ease, box-shadow .35s ease;
     }
     #nav.scrolled {
-      /* 96%-opaque navy already hides any blur, so we drop the costly
-         backdrop-filter that caused per-frame re-blur during scroll */
-      background: rgba(0,35,102,.97);
+      background: var(--navy);
       box-shadow: 0 2px 28px rgba(0,35,102,.35);
     }
     .nav-logo {
@@ -152,7 +151,7 @@
       .nav-links { display: none; }
       .nav-burger { display: flex; }
       #nav {
-        background: rgba(0,35,102,.96);
+        background: var(--navy);
         box-shadow: 0 2px 28px rgba(0,35,102,.35);
         padding: 0 2.5rem 0 0;
       }
