@@ -1838,18 +1838,23 @@ Virtual Course</h3>
     });
   })();
 
-  // Robust scroll for nav-book anchor — recalculates target after layout settles
-  // (first-click naive href="#faq" can land short when lazy images above haven't loaded)
+  // Robust scroll for nav-book anchor.
+  // content-visibility:auto gives off-screen sections an estimated height (900px) on
+  // first load, so a plain href="#faq" lands in the wrong place. We temporarily force
+  // all cv:auto sections to render (one synchronous reflow) to get accurate positions,
+  // then restore immediately before scrolling — invisible to the user.
   document.querySelectorAll('a.nav-book[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      requestAnimationFrame(() => {
-        const navH = document.querySelector('.nav')?.offsetHeight || 0;
-        const top = target.getBoundingClientRect().top + window.scrollY - navH;
-        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-      });
+      const cvEls = document.querySelectorAll('.courses-sec,.videos-sec,.reviews-sec,.about-sec,.faq-sec,.resources-sec,footer');
+      cvEls.forEach(el => { el.style.contentVisibility = 'visible'; });
+      void document.body.offsetHeight; // force synchronous reflow with real heights
+      const navH = document.getElementById('nav')?.offsetHeight || 72;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      cvEls.forEach(el => { el.style.contentVisibility = ''; });
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     });
   });
 
