@@ -1460,36 +1460,16 @@ Virtual Course</h3>
       <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;color:#002366;margin:0">Cookie Preferences</h2>
     </div>
     <div style="padding:1.5rem 2rem">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid #eef0f5">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0">
         <div>
           <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Necessary Cookies</p>
           <p style="font-size:.8rem;color:#666;margin:0">Required for the website to function. Cannot be disabled.</p>
         </div>
         <span style="font-size:.75rem;font-weight:700;color:#72CBE8;background:#f0fbff;padding:.25rem .65rem;border-radius:20px;flex-shrink:0;margin-left:1rem">Always On</span>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid #eef0f5">
-        <div>
-          <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Analytics Cookies</p>
-          <p style="font-size:.8rem;color:#666;margin:0">Help us understand how visitors interact with our site.</p>
-        </div>
-        <label style="position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;margin-left:1rem">
-          <input type="checkbox" id="analytics-toggle" style="opacity:0;width:0;height:0">
-          <span id="analytics-slider" style="position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:24px;transition:.3s"></span>
-        </label>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 0">
-        <div>
-          <p style="font-weight:700;color:#002366;font-size:.9rem;margin-bottom:.15rem">Marketing Cookies</p>
-          <p style="font-size:.8rem;color:#666;margin:0">Used to deliver relevant ads and track campaign performance.</p>
-        </div>
-        <label style="position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;margin-left:1rem">
-          <input type="checkbox" id="marketing-toggle" style="opacity:0;width:0;height:0">
-          <span id="marketing-slider" style="position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:24px;transition:.3s"></span>
-        </label>
-      </div>
     </div>
     <div style="padding:1.25rem 2rem 1.75rem;display:flex;gap:.75rem;justify-content:flex-end">
-      <button id="cookie-save-btn" style="background:#002366;border:none;color:#fff;border-radius:8px;padding:.7rem 1.5rem;font-size:.85rem;font-weight:700;cursor:pointer">Save Preferences</button>
+      <button id="cookie-save-btn" style="background:#002366;border:none;color:#fff;border-radius:8px;padding:.7rem 1.5rem;font-size:.85rem;font-weight:700;cursor:pointer">Close</button>
     </div>
   </div>
 </div>
@@ -1751,61 +1731,23 @@ Virtual Course</h3>
 
   // Cookie banner
   const cookieBanner = document.getElementById('cookie-banner');
-  const analyticsToggle = document.getElementById('analytics-toggle');
-  const marketingToggle = document.getElementById('marketing-toggle');
-  const analyticsSlider = document.getElementById('analytics-slider');
-  const marketingSlider = document.getElementById('marketing-slider');
 
-  function initSliders() {
-    [analyticsSlider, marketingSlider].forEach(s => {
-      s.style.cssText += ';transition:.3s';
-      const dot = document.createElement('span');
-      dot.style.cssText = 'position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s;display:block';
-      s.appendChild(dot);
-    });
-  }
-  function setSliderDot(slider, checked) {
-    const dot = slider.querySelector('span');
-    if (dot) dot.style.transform = checked ? 'translateX(18px)' : 'translateX(0)';
-    slider.style.background = checked ? '#72CBE8' : '#ccc';
-  }
-
-  initSliders();
-
-  analyticsToggle.addEventListener('change', () => setSliderDot(analyticsSlider, analyticsToggle.checked));
-  marketingToggle.addEventListener('change', () => setSliderDot(marketingSlider, marketingToggle.checked));
-  analyticsSlider.addEventListener('click', () => { analyticsToggle.checked = !analyticsToggle.checked; setSliderDot(analyticsSlider, analyticsToggle.checked); });
-  marketingSlider.addEventListener('click', () => { marketingToggle.checked = !marketingToggle.checked; setSliderDot(marketingSlider, marketingToggle.checked); });
-
-  function showCookieBanner() {
-    cookieBanner.style.display = 'block';
-  }
-  function hideCookieBanner() {
-    cookieBanner.style.display = 'none';
-  }
+  function showCookieBanner() { cookieBanner.style.display = 'block'; }
+  function hideCookieBanner() { cookieBanner.style.display = 'none'; }
 
   if (!localStorage.getItem('ontc_cookies')) showCookieBanner();
 
   document.getElementById('cookie-accept-btn').addEventListener('click', () => {
-    localStorage.setItem('ontc_cookies', 'all');
+    localStorage.setItem('ontc_cookies', 'accepted');
     hideCookieBanner();
   });
 
-  // Load the saved preferences into the toggles whenever the modal opens
-  function loadPrefsIntoToggles() {
-    const saved = JSON.parse(localStorage.getItem('ontc_cookies_prefs') || '{}');
-    analyticsToggle.checked = saved.analytics || false;
-    marketingToggle.checked = saved.marketing || false;
-    setSliderDot(analyticsSlider, analyticsToggle.checked);
-    setSliderDot(marketingSlider, marketingToggle.checked);
-  }
-  const cookiePrefs = setupModal('cookie-prefs-modal', 'cookie-prefs-close', loadPrefsIntoToggles);
+  const cookiePrefs = setupModal('cookie-prefs-modal', 'cookie-prefs-close');
 
   document.getElementById('cookie-preferences-btn').addEventListener('click', () => cookiePrefs.open());
 
   document.getElementById('cookie-save-btn').addEventListener('click', () => {
-    localStorage.setItem('ontc_cookies', 'custom');
-    localStorage.setItem('ontc_cookies_prefs', JSON.stringify({ analytics: analyticsToggle.checked, marketing: marketingToggle.checked }));
+    localStorage.setItem('ontc_cookies', 'accepted');
     cookiePrefs.close();
     hideCookieBanner();
   });
