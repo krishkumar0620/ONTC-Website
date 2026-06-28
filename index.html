@@ -708,6 +708,12 @@
     }
     .mob-call:hover { background: rgba(65,182,230,.22); }
     @media (max-width: 768px) { .mob-bar { display: flex; } body { padding-bottom: 72px; } }
+    .btn-desktop-only { display: flex; }
+    .btn-mobile-only  { display: none; }
+    @media (max-width: 768px) {
+      .btn-desktop-only { display: none !important; }
+      .btn-mobile-only  { display: flex !important; }
+    }
 
     /* ── MISC RESPONSIVE ── */
     @media (max-width: 640px) {
@@ -835,8 +841,11 @@
         </div>
       </div>
       <div style="margin-top:1.75rem;display:flex;flex-direction:column;gap:.75rem">
-        <a href="#faq" class="btn-gold" style="display:flex;justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
+        <a href="#faq" class="btn-gold btn-desktop-only" style="justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
           Contact Us Now
+        </a>
+        <a href="tel:+447771808735" class="btn-gold btn-mobile-only" style="justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
+          Call Us Now
         </a>
         <a href="mailto:oscenursetraining@outlook.com" class="btn-gold" style="display:flex;justify-content:center;font-size:.875rem;padding:.8rem 1.25rem">
           Send an Enquiry
@@ -952,7 +961,8 @@ Virtual Course</h3>
           <li><span class="chk chk-teal">✓</span> Full 10-station mock exam with feedback</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
-        <a href="#faq" class="btn-book btn-gold-fill">Contact Us Now</a>
+        <a href="#faq" class="btn-book btn-gold-fill btn-desktop-only">Contact Us Now</a>
+        <a href="tel:+447771808735" class="btn-book btn-gold-fill btn-mobile-only">Call Us Now</a>
         <a href="mailto:oscenursetraining@outlook.com" class="btn-book btn-outline-w" style="margin-top:.6rem">Send an Enquiry</a>
       </div>
       <!-- Tailored — featured -->
@@ -971,7 +981,8 @@ Virtual Course</h3>
           <li><span class="chk chk-white">✓</span> Full 10-station face-to-face mock exam with feedback</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
-        <a href="#faq" class="btn-book btn-gold-fill">Contact Us Now</a>
+        <a href="#faq" class="btn-book btn-gold-fill btn-desktop-only">Contact Us Now</a>
+        <a href="tel:+447771808735" class="btn-book btn-gold-fill btn-mobile-only">Call Us Now</a>
         <a href="mailto:oscenursetraining@outlook.com" class="btn-book btn-outline-w" style="margin-top:.6rem">Send an Enquiry</a>
       </div>
       <!-- Workstations -->
@@ -988,7 +999,8 @@ Virtual Course</h3>
           <li><span class="chk chk-gold">✓</span> Study materials included</li>
         </ul>
         <div class="course-price" style="margin-top:auto">Enquire <small>for pricing</small></div>
-        <a href="#faq" class="btn-book btn-gold-fill">Contact Us Now</a>
+        <a href="#faq" class="btn-book btn-gold-fill btn-desktop-only">Contact Us Now</a>
+        <a href="tel:+447771808735" class="btn-book btn-gold-fill btn-mobile-only">Call Us Now</a>
         <a href="mailto:oscenursetraining@outlook.com" class="btn-book btn-outline-w" style="margin-top:.6rem">Send an Enquiry</a>
       </div>
     </div>
