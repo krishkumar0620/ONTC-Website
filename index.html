@@ -713,6 +713,11 @@
       .btn-desktop-only { display: none !important; }
       .btn-mobile-only  { display: block !important; text-align: center !important; }
     }
+    /* Nav button: treat landscape phones (up to 1024px) as mobile too */
+    @media (max-width: 1024px) {
+      #nav-links li.btn-desktop-only { display: none !important; }
+      #nav-links li.btn-mobile-only  { display: list-item !important; }
+    }
 
     /* ── MISC RESPONSIVE ── */
     @media (max-width: 640px) {
