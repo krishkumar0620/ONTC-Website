@@ -1007,9 +1007,9 @@ Virtual Course</h3>
     <h2 class="section-title rev d1" id="videos-title" style="color:#fff">Student Success Stories & Meet Our Founder Shalu</h2>
     <p class="section-sub rev d2" style="color:#fff">Hear how international nurses overcame OSCE challenges with ONTC Cambridge and from founder Shalu on her mission to help hundreds of nurses start their UK nursing careers.</p>
     <div class="videos-grid">
-      <div class="vid-card rev" data-video-src="Brand%20Assets/Shalu%20Welcome%20to%20OSCE%20Nurse%20Training%20Cambridge.mp4">
+      <div class="vid-card rev" data-video-src="Brand%20Assets/Shalu%20Welcome%20to%20OSCE%20Nurse%20Training%20Cambridge.mp4" data-poster="Brand%20Assets/thumb-shalu.jpg">
         <div class="vid-thumb">
-          <video src="Brand%20Assets/Shalu%20Welcome%20to%20OSCE%20Nurse%20Training%20Cambridge.mp4" muted preload="metadata" playsinline></video>
+          <img src="Brand%20Assets/thumb-shalu.jpg" alt="Shalu's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" aria-label="Play Shalu's testimonial video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -1027,9 +1027,9 @@ Virtual Course</h3>
           <p class="vid-quote">"I am very happy with the training at ONTC. Highly recommend ONTC to anyone preparing for their OSCE."</p>
         </div>
       </div>
-      <div class="vid-card rev d2" data-video-src="Brand%20Assets/Project%20Owen%20website%20testimonial.mp4">
+      <div class="vid-card rev d2" data-video-src="Brand%20Assets/Project%20Owen%20website%20testimonial.mp4" data-poster="Brand%20Assets/thumb-owen.jpg">
         <div class="vid-thumb">
-          <video src="Brand%20Assets/Project%20Owen%20website%20testimonial.mp4" muted preload="metadata" playsinline></video>
+          <img src="Brand%20Assets/thumb-owen.jpg" alt="Owen's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" style="background:var(--gold)" aria-label="Play Owen's testimonial video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -1047,9 +1047,9 @@ Virtual Course</h3>
           <p class="vid-quote">"I really enjoyed all my training with ONTC — teaching is great and learning materials are of high quality. Passed first time!"</p>
         </div>
       </div>
-      <div class="vid-card rev d3" data-video-src="Brand%20Assets/Priyankas%20testimonial%202.mp4">
+      <div class="vid-card rev d3" data-video-src="Brand%20Assets/Priyankas%20testimonial%202.mp4" data-poster="Brand%20Assets/thumb-priyanka.jpg">
         <div class="vid-thumb">
-          <video src="Brand%20Assets/Priyankas%20testimonial%202.mp4" muted preload="metadata" playsinline></video>
+          <img src="Brand%20Assets/thumb-priyanka.jpg" alt="Priyanka's OSCE success story" width="640" height="360" loading="lazy" decoding="async">
           <div class="vid-play-wrap">
             <div class="vid-play" style="background:var(--teal)" aria-label="Play Priyanka's testimonial video">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 3.5l11 5.5-11 5.5V3.5z" fill="white"/></svg>
@@ -1863,6 +1863,7 @@ Virtual Course</h3>
       wrap.setAttribute('role', 'button');
       wrap.setAttribute('tabindex', '0');
       function play() {
+        player.poster = card.dataset.poster || '';
         player.src = card.dataset.videoSrc;
         player.load();
         player.play().catch(() => {});
